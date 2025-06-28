@@ -1,0 +1,136 @@
+nav {
+    width: 100%;
+    background-color: #F7931A;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-bottom: 2px solid black;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 1rem;
+    display: block;
+}
+
+nav li a:hover {
+    background-color: #444;
+}
+
+#btc{
+    height: 150px;
+    width: 150px;
+}
+
+h1{
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #333333;
+}
+#h2Bitcoin{
+    text-align: center;
+}
+
+#btc {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+}
+
+#traits {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+aside {
+    font-style: italic;
+    font-size: 18px;
+    text-align: center;
+    color: #666666;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333333;
+}
+
+#currentBTCPrice,
+#bitcoin-price {
+    text-align: center;
+}
+#currentBTCPrice{
+    margin-top: 60px;
+}
+#bitcoin-price{
+    display: block;
+}
+
+#btcWhitePaper {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    width: 500px;
+}
+#whitePaperLink {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#whatIsBitcoin{
+    margin-top: 40px;
+}
+#coinbaseLogo, #binanceLogo, #strikeLogo, #cashAppLogo, #waterBottle{
+    width: 100%;
+     height: auto;
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+#hTBP{
+    margin-bottom: 50px;
+}
+.linksParagraph{
+    text-align: center;
+}
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio */
+    padding-top: 25px;
+    height: 0;
+}
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#satoshiChronicles{
+    padding-top: 50px;
+    text-align: center;
+}
