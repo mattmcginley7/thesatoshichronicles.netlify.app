@@ -11,6 +11,13 @@ body {
     margin: 0;
     padding-top: 60px;
     font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 img {
@@ -25,7 +32,8 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 1rem;
     flex-wrap: wrap;
 }
 
@@ -33,12 +41,13 @@ nav li a {
     text-decoration: none;
     color: black;
     font-weight: bold;
-    padding: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
     display: block;
 }
 
 nav li a:hover {
-    background-color: #444;
+    background-color: #e0e0e0;
 }
 
 #btc{
