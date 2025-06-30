@@ -124,21 +124,28 @@ p {
 #whatIsBitcoin{
     margin-top: 40px;
 }
-#coinbaseLogo, #binanceLogo, #geminiLogo, #strikeLogo, #cashAppLogo, #waterBottle{
-    width: 100%;
-     height: auto;
-    display: block;
-    margin: 0 auto;
-    width: 300px;
-    margin-bottom: 10px;
-    margin-top: 20px;
-}
-#hTBP{
+.referral {
+    text-align: center;
     margin-bottom: 50px;
 }
-.linksParagraph{
-    text-align: center;
+
+.referral img {
+    width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
 }
+
+.referral figcaption {
+    font-size: 0.9rem;
+}
+
+#hTBP {
+    margin-bottom: 50px;
+}
+
+
 .video-container {
     position: relative;
     padding-bottom: 56.25%;
@@ -173,11 +180,8 @@ p {
 
     #btc,
     #btcWhitePaper,
-    #coinbaseLogo,
-    #binanceLogo,
-    #strikeLogo,
-    #cashAppLogo,
-    #waterBottle {
+    #waterBottle,
+    .referral img {
         width: 80%;
     }
 }
