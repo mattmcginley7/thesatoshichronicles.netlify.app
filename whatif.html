@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog: The Satoshi Chronicles</title>
+    <title>What If Calculator - The Satoshi Chronicles</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -19,13 +19,18 @@
         </ul>
     </nav>
     <div class="container">
-<h1 id="currentBTCPrice">Current Bitcoin Price:</h1>
-<p id="bitcoin-price"></p>
-
+        <h1>If I had bought Bitcoin...</h1>
+        <div>
+            <label for="investment">Amount in USD:</label>
+            <input type="number" id="investment" min="1" step="any">
+        </div>
+        <div>
+            <label for="purchase-date">Purchase date:</label>
+            <input type="date" id="purchase-date">
+        </div>
+        <button id="calc-btn">Calculate</button>
+        <p id="result"></p>
     </div>
-    <footer>
-        <p>This site is for educational purposes only and does not constitute financial advice.</p>
-    </footer>
-    <script src="js/main.js"></script>
+    <script src="js/roi.js"></script>
 </body>
 </html>
