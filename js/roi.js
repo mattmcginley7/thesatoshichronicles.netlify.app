@@ -33,3 +33,27 @@ function calculateROI() {
 }
 
 document.getElementById('calc-btn').addEventListener('click', calculateROI);
+
+function calculateMillion() {
+    const amount = parseFloat(document.getElementById('invest-million').value);
+    const resultEl = document.getElementById('result-million');
+
+    if (!amount) {
+        resultEl.textContent = 'Please enter a valid amount.';
+        return;
+    }
+
+    fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd')
+        .then(r => r.json())
+        .then(data => {
+            const currentPrice = data.bitcoin.usd;
+            const btcAmount = amount / currentPrice;
+            const futureValue = btcAmount * 1000000;
+            resultEl.textContent = `If Bitcoin reaches $1,000,000, your investment would be worth $${futureValue.toFixed(2)}.`;
+        })
+        .catch(() => {
+            resultEl.textContent = 'Unable to retrieve price data.';
+        });
+}
+
+document.getElementById('calc-million-btn').addEventListener('click', calculateMillion);
