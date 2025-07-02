@@ -18,3 +18,8 @@ function getBitcoinPrice() {
 }
 
 getBitcoinPrice();
+
+// Toggle table of contents menu
+document.getElementById('toc-toggle').addEventListener('click', function () {
+    document.getElementById('onpage-nav').classList.toggle('open');
+});
