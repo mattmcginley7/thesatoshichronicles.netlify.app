@@ -10,7 +10,7 @@ nav {
 body {
     margin: 0;
     padding-top: 60px;
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif;
     background-color: #f9f9f9;
 }
 
@@ -136,6 +136,14 @@ p {
     display: block;
     margin: 0 auto;
     margin-bottom: 10px;
+}
+
+.resource-card {
+    background-color: #ffffff;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .referral figcaption {
