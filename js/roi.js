@@ -3,8 +3,16 @@ function formatDate(inputDate) {
     return parts[2] + '-' + parts[1] + '-' + parts[0];
 }
 
+function parseNumber(value) {
+    return parseFloat(value.replace(/,/g, ''));
+}
+
+function formatCurrency(value) {
+    return Math.round(value).toLocaleString();
+}
+
 function calculateROI() {
-    const amount = parseFloat(document.getElementById('investment').value);
+    const amount = parseNumber(document.getElementById('investment').value);
     const date = document.getElementById('purchase-date').value;
     const resultEl = document.getElementById('result');
 
@@ -24,7 +32,7 @@ function calculateROI() {
                     const currentPrice = current.bitcoin.usd;
                     const btcAmount = amount / pastPrice;
                     const valueToday = btcAmount * currentPrice;
-                    resultEl.textContent = `Your $${amount.toFixed(2)} investment would be worth $${valueToday.toFixed(2)} today.`;
+                    resultEl.textContent = `Your $${formatCurrency(amount)} investment would be worth $${formatCurrency(valueToday)} today.`;
                 });
         })
         .catch(() => {
@@ -35,7 +43,7 @@ function calculateROI() {
 document.getElementById('calc-btn').addEventListener('click', calculateROI);
 
 function calculateMillion() {
-    const amount = parseFloat(document.getElementById('invest-million').value);
+    const amount = parseNumber(document.getElementById('invest-million').value);
     const resultEl = document.getElementById('result-million');
 
     if (!amount) {
@@ -49,7 +57,7 @@ function calculateMillion() {
             const currentPrice = data.bitcoin.usd;
             const btcAmount = amount / currentPrice;
             const futureValue = btcAmount * 1000000;
-            resultEl.textContent = `If Bitcoin reaches $1,000,000, your investment would be worth $${futureValue.toFixed(2)}.`;
+            resultEl.textContent = `If Bitcoin reaches $1,000,000, your investment would be worth $${formatCurrency(futureValue)}.`;
         })
         .catch(() => {
             resultEl.textContent = 'Unable to retrieve price data.';
@@ -67,7 +75,7 @@ function updateCagrDisplay() {
 }
 
 function calculateCagr() {
-    const amount = parseFloat(document.getElementById('cagr-amount').value);
+    const amount = parseNumber(document.getElementById('cagr-amount').value);
     const rate = parseFloat(document.getElementById('cagr-rate').value) / 100;
     const resultEl = document.getElementById('cagr-result');
 
@@ -80,7 +88,7 @@ function calculateCagr() {
     let output = '';
     years.forEach(y => {
         const value = amount * Math.pow(1 + rate, y);
-        output += `${y} year${y > 1 ? 's' : ''}: $${value.toFixed(2)}<br>`;
+        output += `${y} year${y > 1 ? 's' : ''}: $${formatCurrency(value)}<br>`;
     });
     resultEl.innerHTML = output;
 }

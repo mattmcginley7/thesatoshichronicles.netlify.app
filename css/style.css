@@ -230,3 +230,19 @@ footer {
 .calculator-card button {
     margin-top: 0.5rem;
 }
+
+#cagr-calc-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px #388E3C;
+}
+
+#cagr-calc-btn:active {
+    box-shadow: none;
+    transform: translateY(2px);
+}
