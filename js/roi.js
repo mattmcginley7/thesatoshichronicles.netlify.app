@@ -57,3 +57,53 @@ function calculateMillion() {
 }
 
 document.getElementById('calc-million-btn').addEventListener('click', calculateMillion);
+
+function updateCagrDisplay() {
+    const rateInput = document.getElementById('cagr-rate');
+    const display = document.getElementById('cagr-rate-display');
+    if (rateInput && display) {
+        display.textContent = rateInput.value + '%';
+    }
+}
+
+function calculateCagr() {
+    const amount = parseFloat(document.getElementById('cagr-amount').value);
+    const rate = parseFloat(document.getElementById('cagr-rate').value) / 100;
+    const resultEl = document.getElementById('cagr-result');
+
+    if (!amount) {
+        resultEl.textContent = 'Please enter a valid amount.';
+        return;
+    }
+
+    const years = [1, 3, 5, 10, 20];
+    let output = '';
+    years.forEach(y => {
+        const value = amount * Math.pow(1 + rate, y);
+        output += `${y} year${y > 1 ? 's' : ''}: $${value.toFixed(2)}<br>`;
+    });
+    resultEl.innerHTML = output;
+}
+
+['growth-slow','growth-medium','growth-high'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+        el.addEventListener('click', () => {
+            const rateInput = document.getElementById('cagr-rate');
+            if (id === 'growth-slow') rateInput.value = 5;
+            if (id === 'growth-medium') rateInput.value = 15;
+            if (id === 'growth-high') rateInput.value = 30;
+            updateCagrDisplay();
+        });
+    }
+});
+
+const cagrRateInput = document.getElementById('cagr-rate');
+if (cagrRateInput) {
+    cagrRateInput.addEventListener('input', updateCagrDisplay);
+}
+
+const cagrCalcBtn = document.getElementById('cagr-calc-btn');
+if (cagrCalcBtn) {
+    cagrCalcBtn.addEventListener('click', calculateCagr);
+}
