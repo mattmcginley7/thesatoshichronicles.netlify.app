@@ -85,14 +85,14 @@ function calculateCagr() {
     resultEl.innerHTML = output;
 }
 
-['growth-slow','growth-medium','growth-high'].forEach(id => {
+['growth-bear','growth-base','growth-bull'].forEach(id => {
     const el = document.getElementById(id);
     if (el) {
         el.addEventListener('click', () => {
             const rateInput = document.getElementById('cagr-rate');
-            if (id === 'growth-slow') rateInput.value = 5;
-            if (id === 'growth-medium') rateInput.value = 15;
-            if (id === 'growth-high') rateInput.value = 30;
+            if (id === 'growth-bear') rateInput.value = 16;
+            if (id === 'growth-base') rateInput.value = 24;
+            if (id === 'growth-bull') rateInput.value = 30;
             updateCagrDisplay();
         });
     }
