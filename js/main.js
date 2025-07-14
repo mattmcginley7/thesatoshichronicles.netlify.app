@@ -5,8 +5,8 @@ function getBitcoinPrice() {
             var response = JSON.parse(this.responseText);
             // CoinGecko returns {"bitcoin":{"usd":12345}}
             var price = response.bitcoin.usd;
-            // Round to the nearest whole dollar
-            document.getElementById("bitcoin-price").innerHTML = "$" + Math.round(price);
+            // Round to the nearest whole dollar and format with commas
+            document.getElementById("bitcoin-price").innerHTML = "$" + Math.round(price).toLocaleString();
         }
     };
     xhttp.open(
