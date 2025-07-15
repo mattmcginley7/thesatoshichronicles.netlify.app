@@ -102,11 +102,11 @@ p {
 #bitcoin-price {
     text-align: center;
 }
-#currentBTCPrice{
+#currentBTCPrice {
     margin-top: 0;
 }
-#bitcoin-price{
-    display: block;
+#bitcoin-price {
+    display: inline;
 }
 
 #btcWhitePaper {
