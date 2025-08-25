@@ -299,3 +299,8 @@ footer {
     box-shadow: none;
     transform: translateY(2px);
 }
+
+.growth-calculator canvas {
+    width: 100%;
+    margin-top: 1rem;
+}
