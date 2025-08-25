@@ -74,6 +74,8 @@ function updateCagrDisplay() {
     }
 }
 
+let cagrChart;
+
 function calculateCagr() {
     const amount = parseNumber(document.getElementById('cagr-amount').value);
     const rate = parseFloat(document.getElementById('cagr-rate').value) / 100;
@@ -84,13 +86,47 @@ function calculateCagr() {
         return;
     }
 
-    const years = [1, 3, 5, 10, 20];
+    const displayYears = [1, 3, 5, 10, 20];
     let output = '';
-    years.forEach(y => {
+    displayYears.forEach(y => {
         const value = amount * Math.pow(1 + rate, y);
         output += `${y} year${y > 1 ? 's' : ''}: $${formatCurrency(value)}<br>`;
     });
     resultEl.innerHTML = output;
+
+    const chartYears = Array.from({ length: 21 }, (_, i) => i);
+    const chartValues = chartYears.map(y => amount * Math.pow(1 + rate, y));
+    const ctx = document.getElementById('cagr-chart').getContext('2d');
+    if (cagrChart) cagrChart.destroy();
+    cagrChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: chartYears,
+            datasets: [{
+                label: 'Projected value',
+                data: chartValues,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                fill: false
+            }]
+        },
+        options: {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: ctx => `$${formatCurrency(ctx.parsed.y)}`
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    ticks: {
+                        callback: val => '$' + formatCurrency(val)
+                    }
+                }
+            }
+        }
+    });
 }
 
 ['growth-bear','growth-base','growth-bull'].forEach(id => {
