@@ -262,6 +262,28 @@ footer {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.qa-card h1 {
+    margin-bottom: 1rem;
+}
+
+.qa-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.qa-item h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: #1a1a1a;
+}
+
+.qa-closing {
+    margin-top: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
 /* Specific styling for the "good time" blog card */
 .good-time {
     text-align: center;
