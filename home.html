@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <nav>
         <ul>
             <li><a href="home.html">Home</a></li>
@@ -18,17 +19,78 @@
             <li><a href="whatif.html">What If?</a></li>
         </ul>
     </nav>
-    <div class="container">
-        <h1 id="currentBTCPrice">Current Bitcoin Price: <span id="bitcoin-price"></span></h1>
+    <main id="main-content" class="container">
+        <section class="hero">
+            <div class="hero-text">
+                <p class="eyebrow">Bitcoin, explained simply</p>
+                <h1>The Satoshi Chronicles</h1>
+                <p class="lead">A beginner-friendly map to understand what Bitcoin is, why it matters, and how to own it safely without getting overwhelmed.</p>
+                <div class="hero-actions">
+                    <a class="button primary" href="#starter-kit">Start the roadmap</a>
+                    <a class="button ghost" href="howtobuy.html">Read the buying guide</a>
+                </div>
+                <div id="currentBTCPrice" class="price-card">Current Bitcoin Price: <span id="bitcoin-price"></span></div>
+                <p class="hero-note">Price pulled from CoinGecko. Refresh to update.</p>
+            </div>
+            <div class="hero-media">
+                <img id="btc" src="bitcoin.png" alt="Bitcoin logo" loading="lazy">
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <h3>21M</h3>
+                        <p>Maximum Bitcoin supply that will ever exist.</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>24/7</h3>
+                        <p>Markets never close, making access global.</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Permissionless</h3>
+                        <p>Anyone with a phone can receive and send value.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <h2 id="satoshiChronicles">The Satoshi Chronicles</h2>
-        <p>Hello! This website was created to help someone who knows nothing about Bitcoin understand the following:</p>
-        <ul>
-            <li>1. What is Bitcoin</li>
-            <li>2. Why it matters</li>
-            <li>3. Where to buy Bitcoin</li>
-            <li>4. How to use it</li>
-        </ul>
+        <section class="page-nav">
+            <h2>Jump to a topic</h2>
+            <div class="nav-grid">
+                <a class="nav-card" href="#starter-kit">Beginner roadmap</a>
+                <a class="nav-card" href="#whatIsBitcoin">Why Bitcoin matters</a>
+                <a class="nav-card" href="#h2Bitcoin">Bitcoin vs. legacy money</a>
+                <a class="nav-card" href="#final-thoughts">Final thoughts</a>
+            </div>
+        </section>
+
+        <section class="intro-panel">
+            <div>
+                <h2>What you'll learn</h2>
+                <p>This website was created to help someone who knows nothing about Bitcoin understand the essentials in the right order.</p>
+            </div>
+            <ul class="intro-list">
+                <li><strong>What it is:</strong> the core idea behind Bitcoin.</li>
+                <li><strong>Why it matters:</strong> the problem it solves for people everywhere.</li>
+                <li><strong>Where to buy:</strong> safe, beginner-friendly onramps.</li>
+                <li><strong>How to use it:</strong> wallets, custody, and best practices.</li>
+            </ul>
+        </section>
+
+        <section class="faq">
+            <h2>Quick answers to common questions</h2>
+            <div class="faq-grid">
+                <details>
+                    <summary>Is Bitcoin too late to start learning about?</summary>
+                    <p>No. The learning curve is the opportunity. Start small, learn the basics, and build confidence over time.</p>
+                </details>
+                <details>
+                    <summary>Do I need to buy a full Bitcoin?</summary>
+                    <p>Not at all. Bitcoin is divisible into 100 million satoshis. You can buy just a few dollars worth.</p>
+                </details>
+                <details>
+                    <summary>What is the safest first step?</summary>
+                    <p>Set up a wallet, write down your seed phrase, and practice with a tiny test transaction.</p>
+                </details>
+            </div>
+        </section>
 
         <section class="starter-kit" id="starter-kit">
             <div class="section-header">
@@ -68,6 +130,50 @@
                 </ul>
             </div>
         </section>
+
+        <section class="learning-path">
+            <h2>Learning path at a glance</h2>
+            <ol class="timeline">
+                <li>
+                    <h3>Build the mental model</h3>
+                    <p>Learn what money is, why scarcity matters, and where Bitcoin fits in the evolution of money.</p>
+                </li>
+                <li>
+                    <h3>Understand custody</h3>
+                    <p>Practice self-custody with a wallet so you are in control of your keys.</p>
+                </li>
+                <li>
+                    <h3>Make your first buy</h3>
+                    <p>Buy a tiny amount, send it to yourself, and learn how to verify a transaction.</p>
+                </li>
+                <li>
+                    <h3>Keep learning</h3>
+                    <p>Stay grounded with quality education, and ignore the noise.</p>
+                </li>
+            </ol>
+        </section>
+
+        <section class="resource-highlights">
+            <h2>Resources curated for beginners</h2>
+            <div class="resource-grid">
+                <article class="resource-card">
+                    <h3>Bitcoin basics explained</h3>
+                    <p>Get the origin story, vocabulary, and core ideas in one place.</p>
+                    <a href="about.html">Read the about page →</a>
+                </article>
+                <article class="resource-card">
+                    <h3>Buying step-by-step</h3>
+                    <p>Find exchanges, learn about wallets, and practice safe buying habits.</p>
+                    <a href="howtobuy.html">Visit the buying guide →</a>
+                </article>
+                <article class="resource-card">
+                    <h3>Deepen your knowledge</h3>
+                    <p>Explore books, podcasts, and community favorites in one list.</p>
+                    <a href="moreresources.html">Open resource library →</a>
+                </article>
+            </div>
+        </section>
+
         <h2 id="whatIsBitcoin">"Why Should I Care About Bitcoin?"</h2>
 
        
@@ -353,7 +459,7 @@
                     is better than gold in every single possible way as money and a store of value, so it is my personal belief
                     that a Bitcoin price of $575,000 is entirely realistic.
                 </p>
-                <h2>Final Thoughts</h2>
+        <h2 id="final-thoughts">Final Thoughts</h2>
                 <p>Is math more honest than people? If so, you agree with the organizational structure of Bitcoin.</p>
                 <p>Should money be available for everyone, regardless of location, skin color, race, sex, gender, or religion? 
                     If so, you agree with Bitcoin's policy. Many countries around the world don't agree.</p>
@@ -376,7 +482,7 @@
                     that will exclude people, they will be limited in where they can be used and sent. They will put time limits
                     on using your own money. People will adopt an open currency like Bitcoin because it is simply better in every possible way.
                 </p>
-    </div>
+    </main>
 
     <footer>
         <p>This site is for educational purposes only and does not constitute financial advice.</p>
