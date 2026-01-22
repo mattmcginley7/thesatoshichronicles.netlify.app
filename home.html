@@ -106,6 +106,42 @@
                     <li>Use small test transactions before sending larger amounts.</li>
                 </ul>
             </div>
+
+            <section class="progress-tracker" aria-labelledby="progress-title">
+                <div class="progress-header">
+                    <div>
+                        <p class="eyebrow">Personal tracker</p>
+                        <h3 id="progress-title">Track your starter-kit progress</h3>
+                        <p class="progress-description">Check off each milestone as you complete it. Your progress is saved on this device.</p>
+                    </div>
+                    <button type="button" class="button ghost progress-reset">Reset</button>
+                </div>
+                <div class="progress-meter" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Starter kit progress">
+                    <span class="progress-bar__fill"></span>
+                </div>
+                <div class="progress-meta">
+                    <span class="progress-summary">0 of 4 steps complete</span>
+                    <span class="progress-value">0%</span>
+                </div>
+                <div class="progress-checklist">
+                    <label class="progress-item" for="progress-learn-core">
+                        <input type="checkbox" id="progress-learn-core">
+                        Learn the core idea behind Bitcoin
+                    </label>
+                    <label class="progress-item" for="progress-wallet">
+                        <input type="checkbox" id="progress-wallet">
+                        Set up a wallet and record your seed phrase
+                    </label>
+                    <label class="progress-item" for="progress-test-buy">
+                        <input type="checkbox" id="progress-test-buy">
+                        Make a small test buy and send it to your wallet
+                    </label>
+                    <label class="progress-item" for="progress-conviction">
+                        <input type="checkbox" id="progress-conviction">
+                        Deepen conviction with trusted resources
+                    </label>
+                </div>
+            </section>
         </section>
 
         <h2 id="whatIsBitcoin">"Why Should I Care About Bitcoin?"</h2>

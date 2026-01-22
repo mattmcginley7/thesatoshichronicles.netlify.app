@@ -556,6 +556,77 @@ iframe {
     font-weight: bold;
 }
 
+.progress-tracker {
+    margin-top: 2rem;
+    background: #ffffff;
+    padding: 1.75rem;
+    border-radius: 18px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
+}
+
+.progress-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.progress-header h3 {
+    margin: 0.2rem 0 0.4rem;
+}
+
+.progress-description {
+    margin: 0;
+    color: var(--ink-soft);
+}
+
+.progress-meter {
+    margin-top: 1.25rem;
+    height: 12px;
+    background: #f1f5f9;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.progress-bar__fill {
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--btc-orange), #ffb347);
+    transition: width 0.3s ease;
+}
+
+.progress-meta {
+    margin-top: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    color: var(--ink-soft);
+}
+
+.progress-checklist {
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.progress-item {
+    display: flex;
+    gap: 0.65rem;
+    align-items: center;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+.progress-item input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--btc-orange);
+}
+
 @media (max-width: 600px) {
     nav ul {
         flex-direction: row;
