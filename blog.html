@@ -21,11 +21,69 @@
             <li><a href="whatif.html">What If?</a></li>
         </ul>
     </nav>
-    <div class="container">
-        <h1 id="currentBTCPrice">Current Bitcoin Price: <span id="bitcoin-price"></span></h1>
+    <div class="container" id="top">
+        <header class="blog-hero">
+            <p class="eyebrow">The Satoshi Chronicles</p>
+            <h1>Blog</h1>
+            <p class="lead">Browse essays, guides, and quick answers to navigate Bitcoin with clarity.</p>
+        </header>
 
-        <section class="blog-card">
-            <h1>Why Bitcoin Changes the Housing Market</h1>
+        <div id="currentBTCPrice">Current Bitcoin Price: <span id="bitcoin-price"></span></div>
+
+        <section class="blog-index" aria-label="Blog index">
+            <div class="section-header">
+                <h2>Start here</h2>
+                <p>Pick a theme or jump straight to the article you need.</p>
+            </div>
+            <div class="blog-index-grid">
+                <a class="blog-index-card" href="#housing-market">
+                    <span class="blog-index-tag">Macro</span>
+                    <h3>Housing Market &amp; Bitcoin</h3>
+                    <p>Why stronger money changes real estate forever.</p>
+                </a>
+                <a class="blog-index-card" href="#energy-feature">
+                    <span class="blog-index-tag">Mining</span>
+                    <h3>Energy Is a Feature</h3>
+                    <p>A research-backed defense of proof-of-work.</p>
+                </a>
+                <a class="blog-index-card" href="#roll-or-die">
+                    <span class="blog-index-tag">Mindset</span>
+                    <h3>How Much to Invest</h3>
+                    <p>A practical guide to sizing your bet.</p>
+                </a>
+                <a class="blog-index-card" href="#savings-account">
+                    <span class="blog-index-tag">Savings</span>
+                    <h3>Bitcoin as a Savings Account</h3>
+                    <p>Why holding dollars keeps falling behind.</p>
+                </a>
+                <a class="blog-index-card" href="#store-of-value">
+                    <span class="blog-index-tag">Strategy</span>
+                    <h3>Store of Value Wars</h3>
+                    <p>How Bitcoin compares to every rival asset.</p>
+                </a>
+                <a class="blog-index-card" href="#good-time">
+                    <span class="blog-index-tag">Quick Check</span>
+                    <h3>Is Now a Good Time?</h3>
+                    <p>A simple framework for buying decisions.</p>
+                </a>
+                <a class="blog-index-card" href="#bitcoin-qa">
+                    <span class="blog-index-tag">Q&amp;A</span>
+                    <h3>Bitcoin Questions, Answered</h3>
+                    <p>Clear answers to the most common doubts.</p>
+                </a>
+                <a class="blog-index-card" href="#strc-yield">
+                    <span class="blog-index-tag">Markets</span>
+                    <h3>STRC Yield Engine</h3>
+                    <p>How structured yield could accelerate Bitcoin.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="blog-card" id="housing-market">
+            <header class="blog-header">
+                <p class="blog-meta">Category: Macro &amp; housing</p>
+                <h2 class="blog-title">Why Bitcoin Changes the Housing Market</h2>
+            </header>
             <aside>How strong money makes homes cheaper, not more expensive</aside>
 
             <p>Most people are taught that buying a house is one of the best investments you can make.</p>
@@ -266,10 +324,14 @@
             <p>Bitcoin doesn’t destroy housing.</p>
 
             <p>It frees housing from having to be money.</p>
+            <a class="blog-back" href="#top">Back to top</a>
         </section>
 
-        <section class="blog-card">
-            <h1>Why Bitcoin Using Energy Is a Feature, Not a Bug</h1>
+        <section class="blog-card" id="energy-feature">
+            <header class="blog-header">
+                <p class="blog-meta">Category: Mining &amp; energy</p>
+                <h2 class="blog-title">Why Bitcoin Using Energy Is a Feature, Not a Bug</h2>
+            </header>
             <aside>A deep research case for proof-of-work, energy, and monetary rights</aside>
 
             <p>⸻</p>
@@ -565,10 +627,14 @@
             <p>The real question is whether securing human monetary freedom is worth it.</p>
 
             <p>For millions of people already using Bitcoin to escape inflation and censorship, the answer is clear.</p>
+            <a class="blog-back" href="#top">Back to top</a>
         </section>
 
-        <section class="blog-card">
-            <h1>Roll or Die You Bet I'm a Rider - A Guide To How I Think About How Much To Invest</h1>
+        <section class="blog-card" id="roll-or-die">
+            <header class="blog-header">
+                <p class="blog-meta">Category: Investing mindset</p>
+                <h2 class="blog-title">Roll or Die You Bet I'm a Rider - A Guide To How I Think About How Much To Invest</h2>
+            </header>
 
             <p>Imagine You're flipping a coin; heads or tails. Each has a 50% outcome. If you bet $1, you can win double your money, $2. If you lose, you lose your dollar. If the odds are 50% and your winnings are double, this is ultimately a pointless game to be played. Over enough time, you'll just break even.</p>
 
@@ -600,10 +666,14 @@
             <p>It also isn't decided instantly, it's a game whose odds change slightly every day so you can always reevaluate at any time.</p>
 
             <p>But, if you are a serious investor, throwing $100 at this isn't correct. Investing all your life's savings, mortgage and bill money when you have a family and you can't handle the day to day volatility isn't right either. But, there is a right number for you, where you can play this game in a way that will change your life and not damage it either.</p>
+            <a class="blog-back" href="#top">Back to top</a>
         </section>
 
-        <section class="blog-card">
-            <h1>Bitcoin is the New Savings Account</h1>
+        <section class="blog-card" id="savings-account">
+            <header class="blog-header">
+                <p class="blog-meta">Category: Savings</p>
+                <h2 class="blog-title">Bitcoin is the New Savings Account</h2>
+            </header>
             <aside>Saving in Dollars is Dead</aside>
             <img src="BTCBurningCash.png" alt="Burning cash" class="blog-image">
 
@@ -618,11 +688,15 @@
             <aside>The yellow line you can think of as the creation of all the brand new money in the world. The other line is the Bitcoin price, which rises as new money is being created.</aside>
             <p>Imagine Bitcoin is in equal footing on all the different properties that make it money as the dollar in every other aspect. Why on earth would you choose to save your wealth in the dollar that inflates forever versus the one that cannot inflate no matter what? This is why the Bitcoin price keeps going up!</p>
             <p>This is becoming obvious now. Just a few years ago, people felt like Bitcoin was just a strange digital curiosity. Now, it's clear that it's a legitimate alternative to traditional currencies.</p>
-        <p>My call to action: Start thinking about your savings differently. Go learn about Bitcoin on your own and if you find out what I am saying is true, decide to hold some of your savings in Bitcoin instead of all in dollars. As times goes by and your confidence and understanding grows, so does the percentage of money you hold in Bitcoin relative to dollars.</p>
+            <p>My call to action: Start thinking about your savings differently. Go learn about Bitcoin on your own and if you find out what I am saying is true, decide to hold some of your savings in Bitcoin instead of all in dollars. As times goes by and your confidence and understanding grows, so does the percentage of money you hold in Bitcoin relative to dollars.</p>
+            <a class="blog-back" href="#top">Back to top</a>
         </section>
 
-        <section class="blog-card">
-            <h1>The Store of Value Wars: One Asset to Rule Them All</h1>
+        <section class="blog-card" id="store-of-value">
+            <header class="blog-header">
+                <p class="blog-meta">Category: Strategy</p>
+                <h2 class="blog-title">The Store of Value Wars: One Asset to Rule Them All</h2>
+            </header>
             <aside>How Bitcoin stacks up against every other place to park your wealth</aside>
 
             <p>Money really only has two jobs: move value through space and keep value through time. We all grasp the first job because sending money is part of daily life. The second job—preserving purchasing power—is where the hidden damage happens. You can still hold the same stack of dollars, yet every item you want costs more because the supply of dollars keeps expanding.</p>
@@ -644,10 +718,14 @@
             <p>Across the world, assets compete to be the preferred vault for wealth: real estate and bonds sit in the hundreds of trillions, equities hover around a hundred trillion, and gold commands tens of trillions. Bitcoin, the contender purpose-built as digital property with a hard cap, is still under two trillion.</p>
 
             <p>Markets are Darwinian. Over time, the assets with the strongest store-of-value traits rise to the top. If Bitcoin truly is the superior option, the flow of wealth toward it is only beginning. Those who recognize and act on that reality early are best positioned to benefit.</p>
+            <a class="blog-back" href="#top">Back to top</a>
         </section>
 
-        <section class="blog-card good-time">
-            <h1>Is now a good time to buy Bitcoin?</h1>
+        <section class="blog-card good-time" id="good-time">
+            <header class="blog-header">
+                <p class="blog-meta">Category: Quick check</p>
+                <h2 class="blog-title">Is now a good time to buy Bitcoin?</h2>
+            </header>
             <img src="Infinity21Million.png" alt="Infinity vs 21 million" class="blog-image good-time-image" style="width:300px;">
             <aside>When it comes to price, infinite dollars are no match to 21 million Bitcoin</aside>
             <div>
@@ -667,10 +745,14 @@
             <button id="check-time-btn">Check if good time</button>
             <p id="time-result"></p>
             <p>On longer time frames, buying Bitcoin will likely always beat the dollar. Short term, anything is possible, but the correct approach to be successful in Bitcoin is to have a lot of patience and to invest money you have saved up, not bill money.</p>
+            <a class="blog-back" href="#top">Back to top</a>
         </section>
 
-        <section class="blog-card qa-card">
-            <h1>The OFFICIAL “Is this is a dumb question” Q&amp;A for Bitcoin</h1>
+        <section class="blog-card qa-card" id="bitcoin-qa">
+            <header class="blog-header">
+                <p class="blog-meta">Category: Q&amp;A</p>
+                <h2 class="blog-title">The OFFICIAL “Is this is a dumb question” Q&amp;A for Bitcoin</h2>
+            </header>
             <p>This is your safe place to ask the “obvious” Bitcoin questions. Every answer below is written to be direct, plain English, and free of jargon so you can build confidence in your understanding step by step.</p>
 
             <div class="qa-list">
@@ -726,10 +808,14 @@
             </div>
 
             <p class="qa-closing">Keep asking questions, keep learning, and move at the pace that lets you sleep well at night.</p>
+            <a class="blog-back" href="#top">Back to top</a>
         </section>
 
-        <section class="blog-card">
-            <h1>STRC: The Yield Engine That Could Help Send Bitcoin Much Higher</h1>
+        <section class="blog-card" id="strc-yield">
+            <header class="blog-header">
+                <p class="blog-meta">Category: Markets</p>
+                <h2 class="blog-title">STRC: The Yield Engine That Could Help Send Bitcoin Much Higher</h2>
+            </header>
 
             <p>There are moments in investing where a new financial structure doesn’t just offer a better return — it changes the game.</p>
             <p>STRC (Stretch), a preferred stock issued by Strategy (formerly MicroStrategy), is one of those moments.</p>
@@ -869,6 +955,7 @@
             <p>It just needs systems that work.</p>
 
             <p>STRC is one of those systems.</p>
+            <a class="blog-back" href="#top">Back to top</a>
         </section>
 
     </div>

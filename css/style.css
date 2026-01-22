@@ -153,6 +153,7 @@ p {
     box-shadow: var(--shadow);
     border: 1px solid var(--border);
     font-weight: 700;
+    font-size: clamp(1.2rem, 1vw + 1rem, 1.6rem);
 }
 #bitcoin-price {
     display: inline;
@@ -715,6 +716,68 @@ footer {
 }
 
 /* Blog styles */
+.blog-hero {
+    text-align: center;
+    margin: 2rem 0 1.5rem;
+}
+
+.blog-index {
+    margin: 2rem 0 3rem;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.blog-index-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.blog-index-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    padding: 1rem;
+    background: var(--surface-muted);
+    border-radius: 16px;
+    text-decoration: none;
+    color: var(--ink);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.blog-index-card h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.blog-index-card p {
+    margin: 0;
+    color: var(--ink-soft);
+}
+
+.blog-index-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--btc-orange);
+}
+
+.blog-index-tag {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: rgba(247, 147, 26, 0.15);
+    color: var(--btc-orange-dark);
+}
+
 .blog-card {
     background-color: #ffffff;
     padding: 1.5rem;
@@ -723,13 +786,46 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.blog-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.blog-title {
+    margin: 0;
+    font-size: clamp(1.6rem, 1.5vw + 1.1rem, 2.2rem);
+}
+
+.blog-meta {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--btc-orange-dark);
+}
+
 .blog-image {
     margin: 1rem 0;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.qa-card h1 {
+.blog-back {
+    display: inline-flex;
+    margin-top: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--btc-orange-dark);
+}
+
+.blog-back:hover {
+    text-decoration: underline;
+}
+
+.qa-card .blog-title {
     margin-bottom: 1rem;
 }
 
