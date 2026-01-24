@@ -7,6 +7,14 @@ function getBitcoinPrice() {
             var price = response.bitcoin.usd;
             // Round to the nearest whole dollar and format with commas
             document.getElementById("bitcoin-price").innerHTML = "$" + Math.round(price).toLocaleString();
+            var priceUpdated = document.getElementById("price-updated");
+            if (priceUpdated) {
+                var timestamp = new Date();
+                priceUpdated.textContent = timestamp.toLocaleTimeString([], {
+                    hour: "2-digit",
+                    minute: "2-digit"
+                });
+            }
         }
     };
     xhttp.open(
