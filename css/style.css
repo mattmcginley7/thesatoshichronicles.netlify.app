@@ -95,6 +95,55 @@ nav li a:hover {
     transform: translateY(-1px);
 }
 
+.page-directory {
+    margin: 2.5rem auto 0;
+    background: var(--surface);
+    border-radius: 18px;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.page-directory h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.page-links {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.75rem;
+}
+
+.page-links a {
+    display: block;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    background: var(--surface-muted);
+    color: var(--ink);
+    font-weight: 600;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.page-links a:hover,
+.page-links a:focus-visible {
+    border-color: var(--btc-orange);
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.12);
+    transform: translateY(-1px);
+}
+
+.page-links a[aria-current="page"] {
+    background: var(--btc-orange);
+    color: #ffffff;
+    border-color: transparent;
+}
+
 #btc{
     height: 150px;
     width: 150px;
