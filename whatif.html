@@ -43,6 +43,33 @@
                 <p id="result"></p>
             </div>
 
+            <div class="calculator-card conviction-simulator">
+                <h2>Bitcoin Conviction Simulator</h2>
+                <p><small>Experience the emotional volatility of a cycle without risking real money.</small></p>
+                <div>
+                    <label for="conviction-amount">Starting amount (USD):</label>
+                    <input type="text" id="conviction-amount" placeholder="e.g. 1,000">
+                </div>
+                <div>
+                    <label for="conviction-year">Pick a buy date:</label>
+                    <select id="conviction-year">
+                        <option value="2017">January 2017</option>
+                        <option value="2021">January 2021</option>
+                        <option value="2024">January 2024</option>
+                    </select>
+                </div>
+                <button id="conviction-start">Start the simulation</button>
+                <div class="simulator-panel">
+                    <p id="conviction-status">Choose a buy date and start to see what happens.</p>
+                    <div class="simulator-actions">
+                        <button type="button" id="conviction-sell" disabled>Sell</button>
+                        <button type="button" id="conviction-hold" disabled>Hold</button>
+                        <button type="button" id="conviction-buy" disabled>Buy more</button>
+                    </div>
+                    <div class="simulator-log" id="conviction-log"></div>
+                </div>
+            </div>
+
             <div class="calculator-card million-calculator">
                 <h2>What if Bitcoin hits $1,000,000?</h2>
                 <p><small>Enter how much Bitcoin you have in dollars today at the current price to see what it will be worth when it hits $1,000,000.</small></p>
