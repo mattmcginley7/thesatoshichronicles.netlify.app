@@ -5,27 +5,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog: The Satoshi Chronicles</title>
+    <title>Learning Resources - The Satoshi Chronicles</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <nav>
         <ul>
             <li><a href="home.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="howtobuy.html">Buy</a></li>
-            <li><a href="moreresources.html">Learn</a></li>
+            <li><a href="moreresources.html" aria-current="page">Learn</a></li>
             <li><a href="whatif.html">Tools</a></li>
         </ul>
 </nav>
-    <div class="container">
-    <h1 id="currentBTCPrice">Current Bitcoin Price: <span id="bitcoin-price"></span></h1>
+    <main id="main-content" class="container">
+    <header class="page-hero">
+        <p class="eyebrow">Learning Resources</p>
+        <h1>Explore trusted Bitcoin educators</h1>
+        <p class="lead">Curated talks, articles, and voices to deepen your understanding.</p>
+        <div id="currentBTCPrice" class="price-card">Current Bitcoin Price: <span id="bitcoin-price"></span></div>
+    </header>
+
     <section class="resource-card andreas">
         <h2>Andreas Antonopoulos</h2>
-        <a href="aantonop.com"><span>Andreas' Official Website</span></a>
+        <a href="https://aantonop.com"><span>Andreas' Official Website</span></a>
         <p>"Andreas M. Antonopoulos is a best-selling author, speaker, educator, and highly sought after expert in Bitcoin and open
         blockchain technologies. He is known for making complex subjects easy to understand and highlighting both the positive
         and negative impacts these technologies can have on our global societies. As an educator, his mission is to educate as
@@ -99,7 +106,7 @@
     </section>
 
    
-    </div>
+    </main>
     <footer>
         <p>This site is for educational purposes only and does not constitute financial advice.</p>
     </footer>

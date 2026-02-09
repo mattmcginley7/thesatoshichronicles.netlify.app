@@ -5,6 +5,7 @@
     --ink-soft: #3e4c59;
     --surface: #ffffff;
     --surface-muted: #f7f8fa;
+    --surface-strong: #f1f5f9;
     --border: rgba(0, 0, 0, 0.08);
     --shadow: 0 14px 32px rgba(15, 23, 42, 0.12);
 }
@@ -33,6 +34,16 @@ body {
     background: radial-gradient(circle at top, #fff8ef 0%, var(--surface-muted) 45%, #f1f5f9 100%);
     color: var(--ink);
     line-height: 1.7;
+}
+
+a {
+    color: var(--btc-orange-dark);
+    text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+    text-decoration: underline;
 }
 
 .skip-link {
@@ -93,6 +104,37 @@ nav li a:hover {
     background-color: rgba(255, 255, 255, 0.85);
     color: #111827;
     transform: translateY(-1px);
+}
+
+nav li a[aria-current="page"] {
+    background: #111827;
+    color: #ffffff;
+}
+
+.page-hero {
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 24px;
+    padding: 2rem;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    margin: 2rem 0;
+}
+
+.page-hero .eyebrow {
+    margin-bottom: 0.35rem;
+}
+
+.page-hero .lead {
+    margin-top: 0.4rem;
+}
+
+.content-panel {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 1.75rem;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    margin: 2rem 0;
 }
 
 .page-directory {
@@ -191,10 +233,12 @@ p {
 }
 
 #currentBTCPrice,
+.price-card,
 #bitcoin-price {
     text-align: center;
 }
-#currentBTCPrice {
+#currentBTCPrice,
+.price-card {
     margin: 1.25rem 0 0;
     background: var(--surface);
     border-radius: 18px;
@@ -231,6 +275,13 @@ p {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.referral-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    margin: 2rem 0;
 }
 
 .referral img {
@@ -305,6 +356,15 @@ ul {
 }
 
 ul li {
+    margin: 0.4rem 0;
+}
+
+ol {
+    padding-left: 1.4rem;
+    color: var(--ink);
+}
+
+ol li {
     margin: 0.4rem 0;
 }
 
@@ -706,6 +766,48 @@ iframe {
     accent-color: var(--btc-orange);
 }
 
+input[type="text"],
+input[type="date"],
+input[type="range"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    border-radius: 10px;
+    border: 1px solid rgba(15, 23, 42, 0.16);
+    font-size: 0.95rem;
+    margin-top: 0.35rem;
+    background-color: #ffffff;
+}
+
+label {
+    font-weight: 600;
+    color: var(--ink-soft);
+}
+
+button {
+    border: none;
+    border-radius: 999px;
+    padding: 0.6rem 1.4rem;
+    font-weight: 700;
+    background: var(--btc-orange);
+    color: #1f2933;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(247, 147, 26, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(247, 147, 26, 0.3);
+}
+
+.calculator-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
 @media (max-width: 600px) {
     nav ul {
         flex-direction: row;
@@ -741,6 +843,11 @@ iframe {
     }
 
     .intro-panel {
+        text-align: center;
+    }
+
+    .page-hero {
+        padding: 1.5rem;
         text-align: center;
     }
 }
