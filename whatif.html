@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <nav>
         <ul>
             <li><a href="home.html">Home</a></li>
@@ -16,56 +17,65 @@
             <li><a href="blog.html">Blog</a></li>
             <li><a href="howtobuy.html">Buy</a></li>
             <li><a href="moreresources.html">Learn</a></li>
-            <li><a href="whatif.html">Tools</a></li>
+            <li><a href="whatif.html" aria-current="page">Tools</a></li>
         </ul>
     </nav>
-    <div class="container calculators">
-        <div class="calculator-card roi-calculator">
-            <h2>If I had bought Bitcoin...</h2>
-            <p><small>This calculator works for purchase dates within the last 365 days.</small></p>
-            <div>
-                <label for="investment">Amount in USD:</label>
-                <input type="text" id="investment" placeholder="e.g. 10,000">
+    <main id="main-content" class="container calculators">
+        <header class="page-hero">
+            <p class="eyebrow">Interactive Tools</p>
+            <h1>Bitcoin What-If Calculators</h1>
+            <p class="lead">Model purchase dates, million-dollar scenarios, and long-term growth paths.</p>
+        </header>
+
+        <div class="calculator-grid">
+            <div class="calculator-card roi-calculator">
+                <h2>If I had bought Bitcoin...</h2>
+                <p><small>This calculator works for purchase dates within the last 365 days.</small></p>
+                <div>
+                    <label for="investment">Amount in USD:</label>
+                    <input type="text" id="investment" placeholder="e.g. 10,000">
+                </div>
+                <div>
+                    <label for="purchase-date">Purchase date:</label>
+                    <input type="date" id="purchase-date">
+                </div>
+                <button id="calc-btn">Calculate</button>
+                <p id="result"></p>
             </div>
-            <div>
-                <label for="purchase-date">Purchase date:</label>
-                <input type="date" id="purchase-date">
+
+            <div class="calculator-card million-calculator">
+                <h2>What if Bitcoin hits $1,000,000?</h2>
+                <p><small>Enter how much Bitcoin you have in dollars today at the current price to see what it will be worth when it hits $1,000,000.</small></p>
+                <div>
+                    <label for="invest-million">Amount in USD:</label>
+                    <input type="text" id="invest-million" placeholder="e.g. 1,000">
+                </div>
+                <button id="calc-million-btn">Calculate</button>
+                <p id="result-million"></p>
             </div>
-            <button id="calc-btn">Calculate</button>
-            <p id="result"></p>
+
+            <div class="calculator-card growth-calculator">
+                <h2>Compounded annual growth projection</h2>
+                <div>
+                    <label for="cagr-amount">Amount in USD you have today:</label>
+                    <input type="text" id="cagr-amount" placeholder="e.g. 5,000">
+                </div>
+                <div>
+                    <label for="cagr-rate">Projected annual growth rate:</label>
+                    <input type="range" id="cagr-rate" min="0" max="100" value="10">
+                    <span id="cagr-rate-display">10%</span>
+                </div>
+                <div>
+                    <button type="button" id="growth-bear">Bear Case (16%)</button>
+                    <button type="button" id="growth-base">Base Case (24%)</button>
+                    <button type="button" id="growth-bull">Bull Case (30%)</button>
+                </div>
+                <button id="cagr-calc-btn">Show Projection</button>
+                <p id="cagr-result"></p>
+                <canvas id="cagr-chart"></canvas>
+            </div>
         </div>
 
-        <div class="calculator-card million-calculator">
-            <h2>What if Bitcoin hits $1,000,000?</h2>
-            <p><small>Enter how much Bitcoin you have in dollars today at the current price to see what it will be worth when it hits $1,000,000.</small></p>
-            <div>
-                <label for="invest-million">Amount in USD:</label>
-                <input type="text" id="invest-million" placeholder="e.g. 1,000">
-            </div>
-            <button id="calc-million-btn">Calculate</button>
-            <p id="result-million"></p>
-        </div>
-
-        <div class="calculator-card growth-calculator">
-            <h2>Compounded annual growth projection</h2>
-            <div>
-                <label for="cagr-amount">Amount in USD you have today:</label>
-                <input type="text" id="cagr-amount" placeholder="e.g. 5,000">
-            </div>
-            <div>
-                <label for="cagr-rate">Projected annual growth rate:</label>
-                <input type="range" id="cagr-rate" min="0" max="100" value="10">
-                <span id="cagr-rate-display">10%</span>
-            </div>
-            <div>
-                <button type="button" id="growth-bear">Bear Case (16%)</button>
-                <button type="button" id="growth-base">Base Case (24%)</button>
-                <button type="button" id="growth-bull">Bull Case (30%)</button>
-            </div>
-            <button id="cagr-calc-btn">Show Projection</button>
-            <p id="cagr-result"></p>
-            <canvas id="cagr-chart"></canvas>
-        </div>
         <section class="page-directory" aria-label="Page directory">
             <h2>Explore the site</h2>
             <ul class="page-links">
@@ -77,7 +87,7 @@
                 <li><a href="whatif.html" aria-current="page">Tools</a></li>
             </ul>
         </section>
-    </div>
+    </main>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/roi.js"></script>
 </body>

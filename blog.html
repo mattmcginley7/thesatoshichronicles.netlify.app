@@ -11,18 +11,20 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <nav>
         <ul>
             <li><a href="home.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="blog.html" aria-current="page">Blog</a></li>
             <li><a href="howtobuy.html">Buy</a></li>
             <li><a href="moreresources.html">Learn</a></li>
             <li><a href="whatif.html">Tools</a></li>
         </ul>
     </nav>
-    <div class="container" id="top">
-        <header class="blog-hero">
+    <main id="main-content" class="container">
+        <div id="top"></div>
+        <header class="blog-hero page-hero">
             <p class="eyebrow">The Satoshi Chronicles</p>
             <h1>Blog</h1>
             <p class="lead">Browse essays, guides, and quick answers to navigate Bitcoin with clarity.</p>
@@ -970,7 +972,7 @@
             </ul>
         </section>
 
-    </div>
+    </main>
     <footer>
         <p>This site is for educational purposes only and does not constitute financial advice.</p>
     </footer>

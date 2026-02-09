@@ -5,13 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Satoshi Chronicles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
     <nav>
         <ul>
-            <li><a href="home.html">Home</a></li>
+            <li><a href="home.html" aria-current="page">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="howtobuy.html">Buy</a></li>
@@ -31,7 +34,19 @@
                 <div id="currentBTCPrice" class="price-card">Current Bitcoin Price: <span id="bitcoin-price"></span></div>
                 <div class="price-meta">Updated <span id="price-updated">--</span> · Price pulled from CoinGecko.</div>
             </div>
-            
+            <div class="hero-media">
+                <img src="Infinity21Million.png" alt="Illustration of the 21 million bitcoin supply cap" loading="lazy">
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <h3>21M</h3>
+                        <p>Hard capped supply.</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>100M</h3>
+                        <p>Satoshis in 1 Bitcoin.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="faq">

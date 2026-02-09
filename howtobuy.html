@@ -4,57 +4,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resources: The Satoshi Chronicles</title>
+    <title>How To Buy Bitcoin - The Satoshi Chronicles</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <nav>
         <ul>
             <li><a href="home.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="blog.html">Blog</a></li>
-            <li><a href="howtobuy.html">Buy</a></li>
+            <li><a href="howtobuy.html" aria-current="page">Buy</a></li>
             <li><a href="moreresources.html">Learn</a></li>
             <li><a href="whatif.html">Tools</a></li>
         </ul>
     </nav>
-    <div class="container">
-<h1 id="currentBTCPrice">Current Bitcoin Price: <span id="bitcoin-price"></span></h1>
+    <main id="main-content" class="container">
+        <header class="page-hero">
+            <p class="eyebrow">Getting started</p>
+            <h1>How To Buy Bitcoin</h1>
+            <p class="lead">Pick a trusted exchange, start small, and practice safe storage habits.</p>
+            <div id="currentBTCPrice" class="price-card">Current Bitcoin Price: <span id="bitcoin-price"></span></div>
+        </header>
 
-<h1>How To Buy Bitcoin</h1>
-<p id="hTBP">These are all referral links of mine. Click on the logos to be automatically referred to the exchange.
-    If you have a friend who already owns some, you could use their referral link.</p>
+        <section class="content-panel">
+            <p id="hTBP">These are all referral links of mine. Click on the logos to be automatically referred to the exchange.
+                If you have a friend who already owns some, you could use their referral link.</p>
 
-<figure class="referral gemini">
-    <a href="https://exchange.gemini.com/register?referral=grx86dcx&type=referral"><img src="GeminiLogo.png" alt="Gemini exchange logo"></a>
-    <figcaption>When you buy $100, you get a bonus of $75 and so does the person that referred you</figcaption>
-</figure>
+            <div class="referral-grid">
+                <figure class="referral gemini">
+                    <a href="https://exchange.gemini.com/register?referral=grx86dcx&type=referral"><img src="GeminiLogo.png" alt="Gemini exchange logo"></a>
+                    <figcaption>When you buy $100, you get a bonus of $75 and so does the person that referred you</figcaption>
+                </figure>
 
-<figure class="referral coinbase">
-    <a href="https://coinbase.com/join/DMNKB8B?src=referral-link"><img src="coinbase.png" alt="Coinbase logo"></a>
-    <figcaption>$30 for you, $30 for who referred you after your first trade of $20 or more</figcaption>
-</figure>
+                <figure class="referral coinbase">
+                    <a href="https://coinbase.com/join/DMNKB8B?src=referral-link"><img src="coinbase.png" alt="Coinbase logo"></a>
+                    <figcaption>$30 for you, $30 for who referred you after your first trade of $20 or more</figcaption>
+                </figure>
 
-<figure class="referral strike">
-    <a href="https://beta.strike.me/handoff/referral/3EAB8I/"><img src="strike_logo_black.png" alt="Strike logo"></a>
-    <figcaption>This referral link will give you $5 off when you deposit and will also give me $5!</figcaption>
-</figure>
+                <figure class="referral strike">
+                    <a href="https://beta.strike.me/handoff/referral/3EAB8I/"><img src="strike_logo_black.png" alt="Strike logo"></a>
+                    <figcaption>This referral link will give you $5 off when you deposit and will also give me $5!</figcaption>
+                </figure>
 
-<figure class="referral cashapp">
-    <a href="https://cash.app/app/FQDLTHX"><img src="Cash_App-Full-Logo.png" alt="Cash App logo"></a>
-    <figcaption>We each get $5 when you send $5 within 14 days of signing up</figcaption>
-</figure>
+                <figure class="referral cashapp">
+                    <a href="https://cash.app/app/FQDLTHX"><img src="Cash_App-Full-Logo.png" alt="Cash App logo"></a>
+                    <figcaption>We each get $5 when you send $5 within 14 days of signing up</figcaption>
+                </figure>
+            </div>
 
-  
+            <h2>How to Store Bitcoin</h2>
+            <ul>
+                <li><a href="https://trezor.io">Trezor: Hardware Wallet</a></li>
+                <li><a href="https://ledger.com">Ledger: Hardware Wallet</a></li>
+                <li><a href="https://exodus.com">Exodus: Self Custody Online Wallet</a></li>
+                <li><a href="https://coinbase.com/wallet">Coinbase Wallet: Self Custody Online Wallet</a></li>
+            </ul>
+        </section>
 
-<h2>How to Store Bitcoin</h2>
-<ul>
-    <a href="trezor.io"><li>Trezor: Hardware Wallet</li></a>
-    <a href="ledger.com"><li>Ledger: Hardware Wallet</li></a>
-    <a href="exodus.com"><li>Exodus: Self Custody Online Wallet</li></a>
-    <a href="coinbase.com/wallet"><li>Coinbase Wallet: Self Custody Online Wallet</li></a>
-</ul>
+        <section class="content-panel">
 <h3>Hardware Wallets</h3>
 <p>Hardware wallets are a type of cryptocurrency wallet that store the user's private keys in a secure hardware device.
     They offer an additional layer of security by keeping the private keys separate from the internet-connected device.
@@ -118,18 +127,20 @@
 <p>Overall, it is generally recommended that users only leave the amount of bitcoin on an exchange that they are
     actively trading and withdraw the rest to a more secure wallet, such as a hardware wallet. This helps to minimize
     the risks and ensure that the user has full control over their funds.</p>
-    <section class="page-directory" aria-label="Page directory">
-        <h2>Explore the site</h2>
-        <ul class="page-links">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="howtobuy.html" aria-current="page">Buy</a></li>
-            <li><a href="moreresources.html">Learn</a></li>
-            <li><a href="whatif.html">Tools</a></li>
-        </ul>
-    </section>
-    </div>
+        </section>
+
+        <section class="page-directory" aria-label="Page directory">
+            <h2>Explore the site</h2>
+            <ul class="page-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="howtobuy.html" aria-current="page">Buy</a></li>
+                <li><a href="moreresources.html">Learn</a></li>
+                <li><a href="whatif.html">Tools</a></li>
+            </ul>
+        </section>
+    </main>
     <footer>
         <p>These referral links may provide bonuses to both you and the site owner. This information is not financial advice.</p>
     </footer>
