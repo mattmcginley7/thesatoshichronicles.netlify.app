@@ -583,6 +583,82 @@ iframe {
     cursor: pointer;
 }
 
+/* Explain Bitcoin to Anyone page */
+.accordion-hint {
+    margin-top: 0.9rem;
+    color: var(--ink-soft);
+    font-weight: 600;
+}
+
+.audience-accordion {
+    margin: 2rem 0 2.5rem;
+}
+
+.audience-item {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+    margin-bottom: 0.85rem;
+    overflow: hidden;
+}
+
+.audience-trigger {
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    background: #ffffff;
+    color: var(--ink);
+    box-shadow: none;
+    padding: 1rem 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.audience-trigger:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.audience-trigger:focus-visible {
+    outline: 3px solid rgba(247, 147, 26, 0.45);
+    outline-offset: -3px;
+}
+
+.chevron {
+    transition: transform 0.24s ease;
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+.audience-trigger[aria-expanded="true"] .chevron {
+    transform: rotate(180deg);
+}
+
+.audience-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.28s ease;
+    padding: 0 1.1rem;
+}
+
+.audience-panel.is-open {
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    padding-bottom: 1rem;
+}
+
+.audience-text {
+    margin: 1rem 0 0.9rem;
+}
+
+.copy-button {
+    margin-bottom: 0.25rem;
+    min-width: 94px;
+}
+
 .price-meta {
     font-size: 0.9rem;
     color: var(--ink-soft);
