@@ -32,76 +32,64 @@
 
         <div id="currentBTCPrice">Current Bitcoin Price: <span id="bitcoin-price"></span></div>
 
-        <section class="blog-index" aria-label="Blog index">
+        <section class="blog-index" aria-label="Start here">
             <div class="section-header">
                 <h2>Start here</h2>
-                <p>Pick a theme or jump straight to the article you need.</p>
+                <p>Three must-read beginner pieces to build confidence fast.</p>
             </div>
-            <div class="blog-index-grid">
-                <a class="blog-index-card" href="#ai-software-bitcoin">
-                    <span class="blog-index-tag">Macro</span>
-                    <h3>AI Is Eating Software — But Does That Mean It Should Eat Bitcoin?</h3>
-                    <p>Why Bitcoin is not “just software” in an AI world.</p>
-                </a>
-                <a class="blog-index-card" href="#housing-market">
-                    <span class="blog-index-tag">Macro</span>
-                    <h3>Housing Market &amp; Bitcoin</h3>
-                    <p>Why stronger money changes real estate forever.</p>
-                </a>
-                <a class="blog-index-card" href="#energy-feature">
-                    <span class="blog-index-tag">Mining</span>
-                    <h3>Energy Is a Feature</h3>
-                    <p>A research-backed defense of proof-of-work.</p>
-                </a>
-                <a class="blog-index-card" href="#roll-or-die">
-                    <span class="blog-index-tag">Mindset</span>
-                    <h3>How Much to Invest</h3>
-                    <p>A practical guide to sizing your bet.</p>
-                </a>
-                <a class="blog-index-card" href="#savings-account">
-                    <span class="blog-index-tag">Savings</span>
-                    <h3>Bitcoin as a Savings Account</h3>
-                    <p>Why holding dollars keeps falling behind.</p>
-                </a>
-                <a class="blog-index-card" href="#store-of-value">
-                    <span class="blog-index-tag">Strategy</span>
-                    <h3>Store of Value Wars</h3>
-                    <p>How Bitcoin compares to every rival asset.</p>
-                </a>
-                <a class="blog-index-card" href="#good-time">
-                    <span class="blog-index-tag">Quick Check</span>
-                    <h3>Is Now a Good Time?</h3>
-                    <p>A simple framework for buying decisions.</p>
+            <div class="blog-index-grid starter-grid">
+                <a class="blog-index-card" href="#bitcoin-explained">
+                    <span class="blog-index-tag">Beginner</span>
+                    <h3>Bitcoin Explained to a Five-Year-Old</h3>
+                    <p>A plain-English mental model for what Bitcoin is and why it matters.</p>
+                    <p class="blog-index-meta">6 min read</p>
                 </a>
                 <a class="blog-index-card" href="#bitcoin-qa">
-                    <span class="blog-index-tag">Q&amp;A</span>
+                    <span class="blog-index-tag">Beginner</span>
                     <h3>Bitcoin Questions, Answered</h3>
-                    <p>Clear answers to the most common doubts.</p>
-                </a>
-                <a class="blog-index-card" href="#bitcoin-explained">
-                    <span class="blog-index-tag">Explainer</span>
-                    <h3>Bitcoin Explained to a Five-Year-Old</h3>
-                    <p>A simple story about fair money.</p>
-                </a>
-                <a class="blog-index-card" href="#strc-yield">
-                    <span class="blog-index-tag">Markets</span>
-                    <h3>STRC Yield Engine</h3>
-                    <p>How structured yield could accelerate Bitcoin.</p>
-                </a>
-                <a class="blog-index-card" href="#what-money-will-ai-use">
-                    <span class="blog-index-tag">AI &amp; Money</span>
-                    <h3>What Money Will AI Use?</h3>
-                    <p>Stablecoins for Spending, Bitcoin for Saving</p>
+                    <p>Quick, no-jargon answers to the questions almost everyone starts with.</p>
+                    <p class="blog-index-meta">7 min read</p>
                 </a>
                 <a class="blog-index-card" href="explain-bitcoin-to-anyone.html">
-                    <span class="blog-index-tag">Explainer</span>
+                    <span class="blog-index-tag">Beginner</span>
                     <h3>Explain Bitcoin to Anyone (in 2–3 Sentences)</h3>
-                    <p>Copy-ready scripts for different audiences.</p>
+                    <p>Use-ready scripts for friends, coworkers, and skeptical family members.</p>
+                    <p class="blog-index-meta">4 min read</p>
                 </a>
             </div>
         </section>
 
-        <section class="blog-card" id="ai-software-bitcoin">
+        <section class="blog-index" aria-label="Discover articles">
+            <div class="section-header">
+                <h2>Discover articles</h2>
+                <p>Filter by topic to quickly find what you want to read next.</p>
+            </div>
+            <div class="blog-filters" role="toolbar" aria-label="Filter blog topics">
+                <button class="filter-chip is-active" data-filter="all" type="button">All</button>
+                <button class="filter-chip" data-filter="beginner" type="button">Beginner</button>
+                <button class="filter-chip" data-filter="money" type="button">Money</button>
+                <button class="filter-chip" data-filter="ai" type="button">AI</button>
+                <button class="filter-chip" data-filter="mining" type="button">Mining</button>
+                <button class="filter-chip" data-filter="strategy" type="button">Strategy</button>
+                <button class="filter-chip" data-filter="tools" type="button">Tools</button>
+            </div>
+            <p class="filter-results" aria-live="polite"></p>
+            <div class="blog-index-grid" id="blog-discovery-grid">
+                <a class="blog-index-card js-filter-card" data-topics="ai,money" href="#ai-software-bitcoin"><span class="blog-index-tag">AI + Money</span><h3>AI Is Eating Software — But Does That Mean It Should Eat Bitcoin?</h3><p>Why Bitcoin’s moat is physical and social, not just code.</p><p class="blog-index-meta">12 min read</p></a>
+                <a class="blog-index-card js-filter-card" data-topics="money,strategy" href="#housing-market"><span class="blog-index-tag">Money</span><h3>Why Bitcoin Changes the Housing Market</h3><p>How weak money turns homes into savings vehicles—and what fixes it.</p><p class="blog-index-meta">10 min read</p></a>
+                <a class="blog-index-card js-filter-card" data-topics="mining,money" href="#energy-feature"><span class="blog-index-tag">Mining</span><h3>Why Bitcoin Using Energy Is a Feature, Not a Bug</h3><p>A practical defense of proof-of-work and energy-backed security.</p><p class="blog-index-meta">14 min read</p></a>
+                <a class="blog-index-card js-filter-card" data-topics="strategy,money" href="#roll-or-die"><span class="blog-index-tag">Strategy</span><h3>How Much Should You Invest?</h3><p>A framework for sizing conviction without reckless risk.</p><p class="blog-index-meta">6 min read</p></a>
+                <a class="blog-index-card js-filter-card" data-topics="beginner,money" href="#savings-account"><span class="blog-index-tag">Beginner + Money</span><h3>Bitcoin is the New Savings Account</h3><p>Why saving in dollars keeps getting harder over time.</p><p class="blog-index-meta">7 min read</p></a>
+                <a class="blog-index-card js-filter-card" data-topics="strategy,money" href="#store-of-value"><span class="blog-index-tag">Strategy</span><h3>The Store of Value Wars</h3><p>A side-by-side comparison of Bitcoin, real estate, stocks, bonds, and gold.</p><p class="blog-index-meta">8 min read</p></a>
+                <a class="blog-index-card js-filter-card" data-topics="beginner,tools" href="#good-time"><span class="blog-index-tag">Tools</span><h3>Is now a good time to buy Bitcoin?</h3><p>A quick interactive check for long-term buyers.</p><p class="blog-index-meta">3 min read</p></a>
+                <a class="blog-index-card js-filter-card" data-topics="beginner" href="#bitcoin-qa"><span class="blog-index-tag">Beginner</span><h3>Bitcoin Questions, Answered</h3><p>Clear answers to common doubts in one place.</p><p class="blog-index-meta">7 min read</p></a>
+                <a class="blog-index-card js-filter-card" data-topics="beginner" href="#bitcoin-explained"><span class="blog-index-tag">Beginner</span><h3>Bitcoin Explained to a Five-Year-Old</h3><p>A memorable story that makes money and Bitcoin easy to explain.</p><p class="blog-index-meta">6 min read</p></a>
+                <a class="blog-index-card js-filter-card" data-topics="money,strategy" href="#strc-yield"><span class="blog-index-tag">Money</span><h3>STRC: The Yield Engine</h3><p>How a yield vehicle could bring more conservative capital toward Bitcoin.</p><p class="blog-index-meta">9 min read</p></a>
+                <a class="blog-index-card js-filter-card" data-topics="ai,money" href="#what-money-will-ai-use"><span class="blog-index-tag">AI</span><h3>What Money Will AI Use?</h3><p>Why stablecoins and Bitcoin may split spending and saving roles.</p><p class="blog-index-meta">8 min read</p></a>
+            </div>
+        </section>
+
+        <section class="blog-card" id="ai-software-bitcoin" data-topics="ai,money">
             <header class="blog-header">
                 <p class="blog-meta">Category: Macro &amp; markets · March 12, 2026</p>
                 <h2 class="blog-title">AI Is Eating Software — But Does That Mean It Should Eat Bitcoin?</h2>
@@ -278,7 +266,7 @@
             <p>And in a world where everything digital becomes cheap, that distinction matters more than ever</p>
         </section>
 
-        <section class="blog-card" id="housing-market">
+        <section class="blog-card" id="housing-market" data-topics="money,strategy">
             <header class="blog-header">
                 <p class="blog-meta">Category: Macro &amp; housing · March 5, 2026</p>
                 <h2 class="blog-title">Why Bitcoin Changes the Housing Market</h2>
@@ -526,7 +514,7 @@
             <a class="blog-back" href="#top">Back to top</a>
         </section>
 
-        <section class="blog-card" id="energy-feature">
+        <section class="blog-card" id="energy-feature" data-topics="mining,money">
             <header class="blog-header">
                 <p class="blog-meta">Category: Mining &amp; energy · February 26, 2026</p>
                 <h2 class="blog-title">Why Bitcoin Using Energy Is a Feature, Not a Bug</h2>
@@ -829,7 +817,7 @@
             <a class="blog-back" href="#top">Back to top</a>
         </section>
 
-        <section class="blog-card" id="roll-or-die">
+        <section class="blog-card" id="roll-or-die" data-topics="strategy,money">
             <header class="blog-header">
                 <p class="blog-meta">Category: Investing mindset · February 19, 2026</p>
                 <h2 class="blog-title">Roll or Die You Bet I'm a Rider - A Guide To How I Think About How Much To Invest</h2>
@@ -868,7 +856,7 @@
             <a class="blog-back" href="#top">Back to top</a>
         </section>
 
-        <section class="blog-card" id="savings-account">
+        <section class="blog-card" id="savings-account" data-topics="beginner,money">
             <header class="blog-header">
                 <p class="blog-meta">Category: Savings · February 12, 2026</p>
                 <h2 class="blog-title">Bitcoin is the New Savings Account</h2>
@@ -891,7 +879,7 @@
             <a class="blog-back" href="#top">Back to top</a>
         </section>
 
-        <section class="blog-card" id="store-of-value">
+        <section class="blog-card" id="store-of-value" data-topics="strategy,money">
             <header class="blog-header">
                 <p class="blog-meta">Category: Strategy · February 5, 2026</p>
                 <h2 class="blog-title">The Store of Value Wars: One Asset to Rule Them All</h2>
@@ -920,7 +908,7 @@
             <a class="blog-back" href="#top">Back to top</a>
         </section>
 
-        <section class="blog-card good-time" id="good-time">
+        <section class="blog-card good-time" id="good-time" data-topics="beginner,tools">
             <header class="blog-header">
                 <p class="blog-meta">Category: Quick check · January 29, 2026</p>
                 <h2 class="blog-title">Is now a good time to buy Bitcoin?</h2>
@@ -947,7 +935,7 @@
             <a class="blog-back" href="#top">Back to top</a>
         </section>
 
-        <section class="blog-card qa-card" id="bitcoin-qa">
+        <section class="blog-card qa-card" id="bitcoin-qa" data-topics="beginner">
             <header class="blog-header">
                 <p class="blog-meta">Category: Q&amp;A · January 22, 2026</p>
                 <h2 class="blog-title">The OFFICIAL “Is this is a dumb question” Q&amp;A for Bitcoin</h2>
@@ -1010,7 +998,7 @@
             <a class="blog-back" href="#top">Back to top</a>
         </section>
 
-        <section class="blog-card" id="bitcoin-explained">
+        <section class="blog-card" id="bitcoin-explained" data-topics="beginner">
             <header class="blog-header">
                 <p class="blog-meta">Category: Explainer · January 15, 2026</p>
                 <h2 class="blog-title">Bitcoin Explained to a Five-Year-Old</h2>
@@ -1136,7 +1124,7 @@
             <a class="blog-back" href="#top">Back to top</a>
         </section>
 
-        <section class="blog-card" id="strc-yield">
+        <section class="blog-card" id="strc-yield" data-topics="money,strategy">
             <header class="blog-header">
                 <p class="blog-meta">Category: Markets · January 8, 2026</p>
                 <h2 class="blog-title">STRC: The Yield Engine That Could Help Send Bitcoin Much Higher</h2>
@@ -1283,7 +1271,7 @@
             <a class="blog-back" href="#top">Back to top</a>
         </section>
 
-        <section class="blog-card" id="what-money-will-ai-use">
+        <section class="blog-card" id="what-money-will-ai-use" data-topics="ai,money">
             <header class="blog-header">
                 <p class="blog-meta">Category: AI &amp; money · January 1, 2026</p>
                 <h2 class="blog-title">What Money Will AI Use?</h2>
