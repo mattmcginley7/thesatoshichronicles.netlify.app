@@ -102,4 +102,80 @@ function setupProgressTracker() {
     updateProgress();
 }
 
-document.addEventListener("DOMContentLoaded", setupProgressTracker);
+function setupBlogDiscovery() {
+    var filterButtons = document.querySelectorAll(".filter-chip");
+    var discoveryCards = document.querySelectorAll(".js-filter-card");
+    var articleCards = document.querySelectorAll(".blog-card[data-topics]");
+    var results = document.querySelector(".filter-results");
+
+    if (!articleCards.length) {
+        return;
+    }
+
+    articleCards.forEach(function (card) {
+        var bodyText = card.innerText || "";
+        var words = bodyText.trim().split(/\s+/).filter(Boolean).length;
+        var readMinutes = Math.max(2, Math.round(words / 220));
+        var meta = card.querySelector(".blog-meta");
+        if (meta && meta.textContent.indexOf("min read") === -1) {
+            meta.textContent = meta.textContent + " · " + readMinutes + " min read";
+        }
+
+        var header = card.querySelector(".blog-header");
+        var title = card.querySelector(".blog-title");
+        var firstParagraph = card.querySelector("p:not(.blog-meta):not(.blog-excerpt)");
+        if (header && title && firstParagraph && !header.querySelector(".blog-excerpt")) {
+            var excerpt = document.createElement("p");
+            excerpt.className = "blog-excerpt";
+            excerpt.textContent = firstParagraph.textContent.trim().slice(0, 180);
+            if (firstParagraph.textContent.trim().length > 180) {
+                excerpt.textContent += "…";
+            }
+            title.insertAdjacentElement("afterend", excerpt);
+        }
+    });
+
+    if (!filterButtons.length || !discoveryCards.length) {
+        return;
+    }
+
+    function applyFilter(topic) {
+        var matchCount = 0;
+
+        discoveryCards.forEach(function (card) {
+            var topics = (card.getAttribute("data-topics") || "").split(",");
+            var isMatch = topic === "all" || topics.indexOf(topic) !== -1;
+            card.style.display = isMatch ? "flex" : "none";
+            if (isMatch) {
+                matchCount += 1;
+            }
+        });
+
+        articleCards.forEach(function (card) {
+            var topics = (card.getAttribute("data-topics") || "").split(",");
+            var isMatch = topic === "all" || topics.indexOf(topic) !== -1;
+            card.classList.toggle("is-hidden", !isMatch);
+        });
+
+        if (results) {
+            results.textContent = "Showing " + matchCount + " article" + (matchCount === 1 ? "" : "s") + ".";
+        }
+    }
+
+    filterButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            filterButtons.forEach(function (item) {
+                item.classList.remove("is-active");
+            });
+            button.classList.add("is-active");
+            applyFilter(button.getAttribute("data-filter"));
+        });
+    });
+
+    applyFilter("all");
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    setupProgressTracker();
+    setupBlogDiscovery();
+});
