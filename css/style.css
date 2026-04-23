@@ -1,13 +1,14 @@
 :root {
     --btc-orange: #f7931a;
-    --btc-orange-dark: #d97706;
-    --ink: #1f2933;
-    --ink-soft: #3e4c59;
-    --surface: #ffffff;
-    --surface-muted: #f7f8fa;
-    --surface-strong: #f1f5f9;
-    --border: rgba(0, 0, 0, 0.08);
-    --shadow: 0 14px 32px rgba(15, 23, 42, 0.12);
+    --btc-orange-bright: #ffb347;
+    --btc-orange-dark: #cc7208;
+    --ink: #f5f7ff;
+    --ink-soft: #b6c0d4;
+    --surface: #0e141f;
+    --surface-muted: #121b2a;
+    --surface-strong: #1a2435;
+    --border: rgba(255, 255, 255, 0.1);
+    --shadow: 0 22px 40px rgba(0, 0, 0, 0.45);
 }
 
 *,
@@ -18,12 +19,13 @@
 
 nav {
     width: 100%;
-    background: linear-gradient(90deg, var(--btc-orange), #ffb347);
+    background: rgba(8, 12, 20, 0.92);
+    backdrop-filter: blur(8px);
     position: fixed;
     top: 0;
     left: 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     z-index: 10;
 }
 
@@ -31,13 +33,16 @@ body {
     margin: 0;
     padding-top: 84px;
     font-family: 'Open Sans', Arial, sans-serif;
-    background: radial-gradient(circle at top, #fff8ef 0%, var(--surface-muted) 45%, #f1f5f9 100%);
+    background:
+        radial-gradient(circle at 80% 10%, rgba(247, 147, 26, 0.2), transparent 35%),
+        radial-gradient(circle at 15% 90%, rgba(247, 147, 26, 0.12), transparent 40%),
+        linear-gradient(180deg, #05080f 0%, #0a1019 45%, #0d1523 100%);
     color: var(--ink);
     line-height: 1.7;
 }
 
 a {
-    color: var(--btc-orange-dark);
+    color: var(--btc-orange-bright);
     text-decoration: none;
 }
 
@@ -64,7 +69,7 @@ a:focus-visible {
 }
 
 .container {
-    max-width: 960px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 1.5rem 3rem;
 }
@@ -91,28 +96,32 @@ nav ul {
 
 nav li a {
     text-decoration: none;
-    color: #ffffff;
-    font-weight: bold;
+    color: var(--ink-soft);
+    font-weight: 700;
     padding: 0.6rem 0.95rem;
-    border-radius: 999px;
+    border-radius: 12px;
     display: block;
     letter-spacing: 0.3px;
-    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    border: 1px solid transparent;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
 }
 
 nav li a:hover {
-    background-color: rgba(255, 255, 255, 0.85);
-    color: #111827;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--ink);
+    border-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-1px);
+    text-decoration: none;
 }
 
 nav li a[aria-current="page"] {
-    background: #111827;
-    color: #ffffff;
+    color: var(--btc-orange);
+    border-color: rgba(247, 147, 26, 0.7);
+    box-shadow: inset 0 -2px 0 var(--btc-orange);
 }
 
 .page-hero {
-    background: rgba(255, 255, 255, 0.92);
+    background: linear-gradient(170deg, rgba(17, 26, 40, 0.94), rgba(9, 15, 24, 0.92));
     border-radius: 24px;
     padding: 2rem;
     border: 1px solid var(--border);
@@ -129,7 +138,7 @@ nav li a[aria-current="page"] {
 }
 
 .content-panel {
-    background: #ffffff;
+    background: var(--surface-muted);
     border-radius: 20px;
     padding: 1.75rem;
     box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
@@ -139,7 +148,7 @@ nav li a[aria-current="page"] {
 
 .page-directory {
     margin: 2.5rem auto 0;
-    background: var(--surface);
+    background: var(--surface-muted);
     border-radius: 18px;
     padding: 1.5rem;
     border: 1px solid var(--border);
@@ -165,8 +174,8 @@ nav li a[aria-current="page"] {
     text-align: center;
     padding: 0.75rem 1rem;
     text-decoration: none;
-    background: var(--surface-muted);
-    color: var(--ink);
+    background: var(--surface-strong);
+    color: var(--ink-soft);
     font-weight: 600;
     border-radius: 12px;
     border: 1px solid transparent;
@@ -182,7 +191,7 @@ nav li a[aria-current="page"] {
 
 .page-links a[aria-current="page"] {
     background: var(--btc-orange);
-    color: #ffffff;
+    color: #19130a;
     border-color: transparent;
 }
 
@@ -194,7 +203,7 @@ nav li a[aria-current="page"] {
 h1 {
     font-size: clamp(1.9rem, 2.4vw + 1.1rem, 2.8rem);
     font-weight: 800;
-    color: var(--ink);
+    color: #ffffff;
     margin-bottom: 1rem;
 }
 #h2Bitcoin{
@@ -220,7 +229,7 @@ aside {
     font-style: italic;
     font-size: 1.05rem;
     text-align: center;
-    color: var(--ink-soft);
+    color: #9ea9c1;
     margin: 1.25rem auto;
     max-width: 680px;
 }
@@ -240,8 +249,8 @@ p {
 #currentBTCPrice,
 .price-card {
     margin: 1.25rem 0 0;
-    background: var(--surface);
-    border-radius: 18px;
+    background: linear-gradient(150deg, #111a28, #0d1522);
+    border-radius: 16px;
     padding: 1.1rem 1.25rem;
     box-shadow: var(--shadow);
     border: 1px solid var(--border);
@@ -264,7 +273,7 @@ p {
     gap: 1.5rem;
     padding: 1.5rem;
     border-radius: 18px;
-    background: var(--surface);
+    background: linear-gradient(170deg, rgba(20, 30, 46, 0.96), rgba(12, 20, 33, 0.92));
     border: 1px solid var(--border);
     box-shadow: var(--shadow);
     margin-bottom: 1.5rem;
@@ -310,9 +319,9 @@ p {
     text-align: center;
     margin-bottom: 50px;
     padding: 1.5rem;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--surface-muted);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
 }
 
 .referral-grid {
@@ -331,7 +340,7 @@ p {
 }
 
 .resource-card {
-    background-color: #ffffff;
+    background-color: var(--surface-muted);
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     border-radius: 10px;
@@ -372,7 +381,7 @@ p {
 h2,
 h3,
 h4 {
-    color: var(--ink);
+    color: #f8faff;
     margin-top: 2.5rem;
     margin-bottom: 0.75rem;
 }
@@ -385,7 +394,7 @@ h4 {
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--btc-orange-dark);
+    color: var(--btc-orange);
 }
 
 ul {
@@ -409,7 +418,7 @@ ol li {
 img,
 iframe {
     border-radius: 18px;
-    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.45);
 }
 
 .hero {
@@ -417,7 +426,14 @@ iframe {
     gap: 2.5rem;
     align-items: center;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    padding: 2.5rem 0 1rem;
+    padding: 2.2rem;
+    margin-top: 1.2rem;
+    border-radius: 26px;
+    background:
+        radial-gradient(circle at 90% 20%, rgba(247, 147, 26, 0.16), transparent 40%),
+        linear-gradient(165deg, rgba(18, 28, 43, 0.95), rgba(11, 17, 28, 0.96));
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
 }
 
 .hero-text {
@@ -430,7 +446,7 @@ iframe {
     text-transform: uppercase;
     letter-spacing: 0.2em;
     font-weight: 700;
-    color: var(--btc-orange-dark);
+    color: var(--btc-orange);
     margin: 0;
 }
 
@@ -459,14 +475,15 @@ iframe {
 }
 
 .button.primary {
-    background: var(--btc-orange);
-    color: #111827;
+    background: linear-gradient(90deg, var(--btc-orange), var(--btc-orange-bright));
+    color: #18120a;
     box-shadow: 0 10px 18px rgba(247, 147, 26, 0.3);
 }
 
 .button.ghost {
-    border: 2px solid var(--btc-orange);
-    color: var(--btc-orange-dark);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    color: var(--ink);
+    background: rgba(255, 255, 255, 0.03);
 }
 
 .button:hover {
@@ -492,7 +509,7 @@ iframe {
 }
 
 .stat-card {
-    background: #ffffff;
+    background: linear-gradient(150deg, #121b2b, #0b121d);
     padding: 1.25rem;
     border-radius: 16px;
     border: 1px solid rgba(15, 23, 42, 0.08);
@@ -502,12 +519,13 @@ iframe {
 
 .stat-card h3 {
     margin: 0;
-    font-size: 1.4rem;
+    font-size: 2rem;
+    color: var(--btc-orange);
 }
 
 .page-nav {
     margin: 2rem 0;
-    background: #ffffff;
+    background: var(--surface-muted);
     padding: 1.5rem;
     border-radius: 20px;
     box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
@@ -521,7 +539,7 @@ iframe {
 }
 
 .nav-card {
-    background: var(--surface-muted);
+    background: var(--surface-strong);
     padding: 1rem;
     border-radius: 14px;
     text-decoration: none;
@@ -540,7 +558,7 @@ iframe {
     gap: 1.5rem;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     align-items: center;
-    background: rgba(255, 255, 255, 0.7);
+    background: linear-gradient(160deg, rgba(18, 28, 43, 0.95), rgba(12, 20, 33, 0.95));
     border-radius: 20px;
     padding: 1.75rem;
     border: 1px solid rgba(15, 23, 42, 0.08);
@@ -555,7 +573,7 @@ iframe {
 }
 
 .intro-list li {
-    background: #ffffff;
+    background: var(--surface-strong);
     padding: 0.85rem 1rem;
     border-radius: 12px;
     border: 1px solid rgba(15, 23, 42, 0.06);
@@ -571,7 +589,7 @@ iframe {
 }
 
 .faq details {
-    background: #ffffff;
+    background: var(--surface-muted);
     padding: 1rem 1.25rem;
     border-radius: 14px;
     border: 1px solid rgba(15, 23, 42, 0.08);
@@ -595,7 +613,7 @@ iframe {
 }
 
 .audience-item {
-    background: #ffffff;
+    background: var(--surface-muted);
     border-radius: 16px;
     border: 1px solid rgba(15, 23, 42, 0.1);
     box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
@@ -607,7 +625,7 @@ iframe {
     width: 100%;
     border: none;
     border-radius: 0;
-    background: #ffffff;
+    background: var(--surface-muted);
     color: var(--ink);
     box-shadow: none;
     padding: 1rem 1.1rem;
@@ -675,7 +693,7 @@ iframe {
 }
 
 .concept-card {
-    background: #ffffff;
+    background: var(--surface-muted);
     padding: 1.5rem;
     border-radius: 18px;
     border: 1px solid rgba(15, 23, 42, 0.08);
@@ -705,7 +723,7 @@ iframe {
 }
 
 .timeline li {
-    background: #ffffff;
+    background: var(--surface-strong);
     padding: 1.25rem;
     border-radius: 16px;
     border-left: 4px solid var(--btc-orange);
@@ -748,7 +766,7 @@ iframe {
 }
 
 .kit-card {
-    background: #ffffff;
+    background: var(--surface-muted);
     padding: 1.5rem;
     border-radius: 18px;
     box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
@@ -777,7 +795,7 @@ iframe {
 
 .callout {
     margin-top: 2rem;
-    background: #ffffff;
+    background: var(--surface-muted);
     padding: 1.5rem 1.75rem;
     border-radius: 18px;
     border-left: 6px solid var(--btc-orange);
@@ -811,7 +829,7 @@ iframe {
 
 .progress-tracker {
     margin-top: 2rem;
-    background: #ffffff;
+    background: var(--surface-muted);
     padding: 1.75rem;
     border-radius: 18px;
     border: 1px solid rgba(15, 23, 42, 0.08);
@@ -888,10 +906,11 @@ textarea {
     width: 100%;
     padding: 0.6rem 0.75rem;
     border-radius: 10px;
-    border: 1px solid rgba(15, 23, 42, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.22);
     font-size: 0.95rem;
     margin-top: 0.35rem;
-    background-color: #ffffff;
+    background-color: var(--surface-strong);
+    color: var(--ink);
 }
 
 label {
@@ -971,9 +990,9 @@ footer {
     padding: 1rem 0;
     font-size: 0.8rem;
     text-align: center;
-    background-color: #f2f2f2;
-    border-top: 1px solid #ccc;
-    color: #666;
+    background-color: rgba(8, 12, 20, 0.92);
+    border-top: 1px solid var(--border);
+    color: var(--ink-soft);
 }
 
 /* Calculator styles */
@@ -982,7 +1001,7 @@ footer {
 }
 
 .calculator-card {
-    background-color: #ffffff;
+    background-color: var(--surface-muted);
     padding: 1.5rem;
     margin-bottom: 2rem;
     border-radius: 10px;
@@ -1065,7 +1084,7 @@ footer {
 
 .blog-index {
     margin: 2rem 0 3rem;
-    background: #ffffff;
+    background: var(--surface-muted);
     padding: 2rem;
     border-radius: 20px;
     box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
@@ -1175,7 +1194,7 @@ footer {
 }
 
 .blog-card {
-    background-color: #ffffff;
+    background-color: var(--surface-muted);
     padding: 1.5rem;
     margin-bottom: 2rem;
     border-radius: 10px;
