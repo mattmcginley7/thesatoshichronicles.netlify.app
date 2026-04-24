@@ -10,78 +10,96 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="home-page">
     <a class="skip-link" href="#main-content">Skip to content</a>
-    <nav>
+
+    <header class="mobile-app-header" role="banner">
+        <a class="brand" href="home.html" aria-label="The Satoshi Chronicles home">
+            <span class="brand-logo" aria-hidden="true">₿</span>
+            <span class="brand-text">The Satoshi Chronicles</span>
+        </a>
+        <button class="menu-button" type="button" aria-label="Open site navigation menu">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <nav class="mobile-icon-nav" aria-label="Primary">
         <ul>
-            <li><a href="home.html" aria-current="page">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="howtobuy.html">Buy</a></li>
-            <li><a href="moreresources.html">Learn</a></li>
-            <li><a href="whatif.html">Tools</a></li>
+            <li><a href="home.html" aria-current="page"><span class="nav-icon" aria-hidden="true">⌂</span><span>Home</span></a></li>
+            <li><a href="about.html"><span class="nav-icon" aria-hidden="true">◌</span><span>About</span></a></li>
+            <li><a href="blog.html"><span class="nav-icon" aria-hidden="true">☰</span><span>Blog</span></a></li>
+            <li><a href="howtobuy.html"><span class="nav-icon" aria-hidden="true">🛒</span><span>Buy</span></a></li>
+            <li><a href="moreresources.html"><span class="nav-icon" aria-hidden="true">▣</span><span>Learn</span></a></li>
+            <li><a href="whatif.html"><span class="nav-icon" aria-hidden="true">⚙</span><span>Tools</span></a></li>
         </ul>
     </nav>
+
     <main id="main-content" class="container">
-        <section class="hero">
+        <section class="hero app-hero">
             <div class="hero-text">
-                <p class="eyebrow">Bitcoin, explained simply</p>
-                <h1>The Satoshi Chronicles</h1>
+                <h1><span class="hero-white">Bitcoin,</span><br><span class="hero-orange">explained simply</span></h1>
                 <p class="lead">A beginner-friendly map to understand what Bitcoin is, why it matters, and how to own it safely without getting overwhelmed.</p>
                 <div class="hero-actions">
-                    <a class="button primary" href="#quick-takeaways">Start with the basics</a>
-                    <a class="button ghost" href="howtobuy.html">Read the buying guide</a>
+                    <a class="button primary" href="#quick-takeaways">📘 Start with the basics</a>
+                    <a class="button ghost" href="howtobuy.html">🛡️ Read the buying guide</a>
                 </div>
-                <div id="currentBTCPrice" class="price-card">Current Bitcoin Price: <span id="bitcoin-price"></span></div>
-                <div class="price-meta">Updated <span id="price-updated">--</span> · Price pulled from CoinGecko.</div>
-            </div>
-            <div class="hero-media">
-                <img src="Infinity21Million.png" alt="Illustration of the 21 million bitcoin supply cap" loading="lazy">
-                <div class="stat-grid">
-                    <div class="stat-card">
+                <div class="hero-stats">
+                    <article class="price-panel" aria-live="polite">
+                        <div class="price-head"><span>Current Bitcoin Price</span><span class="live-pill"><span class="dot"></span>Live</span></div>
+                        <p class="price-value" id="currentBTCPrice"><span id="bitcoin-price">$--</span></p>
+                        <p class="price-change" id="bitcoin-change">-- (24h)</p>
+                        <div class="price-footer">
+                            <span id="price-updated">As of --</span>
+                            <span>• USD</span>
+                            <span class="mini-chart" aria-hidden="true"></span>
+                        </div>
+                    </article>
+                    <article class="stat-card compact">
                         <h3>21M</h3>
-                        <p>Hard capped supply.</p>
-                    </div>
-                    <div class="stat-card">
+                        <p>Hard capped supply</p>
+                    </article>
+                    <article class="stat-card compact">
                         <h3>100M</h3>
-                        <p>Satoshis in 1 Bitcoin.</p>
-                    </div>
+                        <p>Satoshis in 1 Bitcoin</p>
+                    </article>
                 </div>
             </div>
-        </section>
-
-        <section class="page-nav" aria-labelledby="start-here">
-            <h2 id="start-here">Start here</h2>
-            <p class="lead">This homepage is long, so here are the fastest ways to get what you need.</p>
-            <div class="nav-grid">
-                <a class="nav-card" href="#quick-takeaways">Get the 60-second version</a>
-                <a class="nav-card" href="#whatIsBitcoin">Why Bitcoin matters</a>
-                <a class="nav-card" href="#what-is-money">What money is</a>
-                <a class="nav-card" href="#h2Bitcoin">Why Bitcoin is different</a>
-                <a class="nav-card" href="#bitcoin-price-outlook">How price fits in</a>
-                <a class="nav-card" href="howtobuy.html">Ready to buy safely?</a>
+            <div class="hero-media" aria-hidden="true">
+                <div class="coin-glow"></div>
             </div>
         </section>
 
         <section class="confidence-strip" aria-labelledby="confidence-strip-heading">
             <div class="confidence-card">
-                <p class="eyebrow">Start with confidence</p>
+                <p class="eyebrow">Start here</p>
                 <h2 id="confidence-strip-heading">A calmer way to learn Bitcoin</h2>
-                <p>This site is designed to help first-time readers move from curiosity to confidence without hype, jargon, or pressure to rush.</p>
+                <p>Step-by-step guides, plain English explanations, and practical tools to help you go from curious to confident.</p>
             </div>
-            <div class="confidence-grid">
-                <article class="confidence-item">
-                    <h3>Beginner focused</h3>
-                    <p>Short explanations, plain language, and simple examples that make the big ideas easier to keep up with.</p>
-                </article>
-                <article class="confidence-item">
-                    <h3>Safety first</h3>
-                    <p>Learn the basics of wallets, seed phrases, and small test purchases before making bigger decisions.</p>
-                </article>
-                <article class="confidence-item">
-                    <h3>Built to explore</h3>
-                    <p>Jump to the sections you care about most, then come back later for the deeper context when you are ready.</p>
-                </article>
+            <div class="confidence-grid four-up">
+                <article class="confidence-item"><h3>📖</h3><p>Beginner friendly</p></article>
+                <article class="confidence-item"><h3>🛡️</h3><p>Safe &amp; practical</p></article>
+                <article class="confidence-item"><h3>🧭</h3><p>Clear roadmap</p></article>
+                <article class="confidence-item"><h3>₿</h3><p>No hype, just facts</p></article>
+            </div>
+        </section>
+
+        <section class="faq quick-answers" aria-labelledby="quick-answers-heading">
+            <div class="faq-header">
+                <h2 id="quick-answers-heading">Quick answers</h2>
+                <a href="moreresources.html">View all FAQs →</a>
+            </div>
+            <div class="faq-grid">
+                <a class="faq-row" href="#faq-full-bitcoin">Do I need to buy a full Bitcoin?<span aria-hidden="true">›</span></a>
+                <a class="faq-row" href="#faq-safe-step">What is the safest first step?<span aria-hidden="true">›</span></a>
+            </div>
+        </section>
+
+        <section class="why-bitcoin" aria-labelledby="why-bitcoin-heading">
+            <h2 id="why-bitcoin-heading">Why Bitcoin matters</h2>
+            <div class="why-grid">
+                <article class="why-card"><h3>💡 Financial freedom</h3><p>Take control of your money and your future.</p></article>
+                <article class="why-card"><h3>🛡 Sound money</h3><p>Scarce, secure, and built to last.</p></article>
+                <article class="why-card"><h3>🌐 Global &amp; permissionless</h3><p>Send and receive value anywhere, anytime.</p></article>
             </div>
         </section>
 
@@ -89,14 +107,14 @@
             <h2>Quick answers to common questions</h2>
             <div class="faq-grid">
                 <details>
-                    <summary>Is Bitcoin too late to start learning about?</summary>
+                    <summary id="faq-too-late">Is Bitcoin too late to start learning about?</summary>
                     <p>No. The learning curve is the opportunity. Start small, learn the basics, and build confidence over time.</p>
                 </details>
-                <details>
+                <details id="faq-full-bitcoin">
                     <summary>Do I need to buy a full Bitcoin?</summary>
                     <p>Not at all. Bitcoin is divisible into 100 million satoshis. You can buy just a few dollars worth.</p>
                 </details>
-                <details>
+                <details id="faq-safe-step">
                     <summary>What is the safest first step?</summary>
                     <p>Set up a wallet, write down your seed phrase, and practice with a tiny test transaction.</p>
                 </details>
@@ -450,8 +468,8 @@
                 </section>
     </main>
 
-    <footer>
-        <p>This site is for educational purposes only and does not constitute financial advice.</p>
+    <footer class="mobile-footer">
+        <p>Learn. Understand. Own Bitcoin.</p>
     </footer>
         <script type="text/javascript" src="js/main.js"></script>
 </body>

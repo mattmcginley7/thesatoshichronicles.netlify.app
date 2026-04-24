@@ -5,21 +5,33 @@ function getBitcoinPrice() {
             var response = JSON.parse(this.responseText);
             // CoinGecko returns {"bitcoin":{"usd":12345}}
             var price = response.bitcoin.usd;
-            // Round to the nearest whole dollar and format with commas
-            document.getElementById("bitcoin-price").innerHTML = "$" + Math.round(price).toLocaleString();
+            var change24h = response.bitcoin.usd_24h_change;
+            var priceNode = document.getElementById("bitcoin-price");
+            if (priceNode) {
+                priceNode.innerHTML = "$" + Math.round(price).toLocaleString();
+            }
+
+            var priceChange = document.getElementById("bitcoin-change");
+            if (priceChange && typeof change24h === "number") {
+                var formattedChange = change24h.toFixed(2) + "% (24h)";
+                priceChange.textContent = (change24h >= 0 ? "▲ " : "▼ ") + formattedChange;
+                priceChange.classList.toggle("is-negative", change24h < 0);
+            }
+
             var priceUpdated = document.getElementById("price-updated");
             if (priceUpdated) {
                 var timestamp = new Date();
-                priceUpdated.textContent = timestamp.toLocaleTimeString([], {
-                    hour: "2-digit",
-                    minute: "2-digit"
+                priceUpdated.textContent = "As of " + timestamp.toLocaleDateString([], {
+                    month: "short",
+                    day: "numeric",
+                    year: "numeric"
                 });
             }
         }
     };
     xhttp.open(
         "GET",
-        "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd",
+        "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true",
         true
     );
     xhttp.send();
