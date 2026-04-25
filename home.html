@@ -12,7 +12,126 @@
 </head>
 <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
-    <nav>
+    <section class="mobile-home-shell" aria-label="Mobile homepage preview">
+        <header class="mobile-top-header">
+            <a class="mobile-brand" href="home.html" aria-label="The Satoshi Chronicles home">
+                <span class="mobile-brand-icon">₿</span>
+                <span class="mobile-brand-text">The Satoshi Chronicles</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Open menu" type="button">
+                ☰
+            </button>
+        </header>
+
+        <nav class="mobile-icon-nav" aria-label="Primary mobile navigation">
+            <a href="home.html" class="mobile-nav-item is-active" aria-current="page">
+                <span class="mobile-nav-icon">⌂</span>
+                <span>Home</span>
+            </a>
+            <a href="about.html" class="mobile-nav-item">
+                <span class="mobile-nav-icon">◌</span>
+                <span>About</span>
+            </a>
+            <a href="blog.html" class="mobile-nav-item">
+                <span class="mobile-nav-icon">▤</span>
+                <span>Blog</span>
+            </a>
+            <a href="howtobuy.html" class="mobile-nav-item">
+                <span class="mobile-nav-icon">🛒</span>
+                <span>Buy</span>
+            </a>
+            <a href="moreresources.html" class="mobile-nav-item">
+                <span class="mobile-nav-icon">☰</span>
+                <span>Learn</span>
+            </a>
+            <a href="whatif.html" class="mobile-nav-item">
+                <span class="mobile-nav-icon">⚙</span>
+                <span>Tools</span>
+            </a>
+        </nav>
+
+        <main class="mobile-home-main">
+            <section class="mobile-hero-card">
+                <div class="mobile-hero-copy">
+                    <h1 class="mobile-hero-title">
+                        <span>Bitcoin,</span>
+                        <span class="mobile-title-accent">explained simply</span>
+                    </h1>
+                    <p class="mobile-hero-subheadline">A beginner-friendly map to understand what Bitcoin is, why it matters, and how to own it safely without getting overwhelmed.</p>
+                    <div class="mobile-hero-actions">
+                        <a class="mobile-btn mobile-btn-primary" href="#quick-takeaways">Start with the basics</a>
+                        <a class="mobile-btn mobile-btn-outline" href="howtobuy.html">Read the buying guide</a>
+                    </div>
+                </div>
+                <div class="mobile-hero-visual" aria-hidden="true">
+                    <img src="bitcoin.png" alt="" loading="lazy">
+                </div>
+            </section>
+
+            <section class="mobile-stats-grid" aria-label="Bitcoin stats">
+                <article class="mobile-price-card">
+                    <p class="mobile-price-kicker"><span>Current Bitcoin Price</span><span class="mobile-live">Live</span></p>
+                    <p class="mobile-price-value">$63,742.18</p>
+                    <p class="mobile-price-change">▲ 1.82% (24h)</p>
+                    <div class="mobile-mini-chart" aria-hidden="true"></div>
+                </article>
+                <article class="mobile-mini-stat">
+                    <h3>21M</h3>
+                    <p>Hard capped supply</p>
+                </article>
+                <article class="mobile-mini-stat">
+                    <h3>100M</h3>
+                    <p>Satoshis in 1 Bitcoin</p>
+                </article>
+            </section>
+
+            <section class="mobile-start-card">
+                <p class="mobile-section-label">Start here</p>
+                <h2>A calmer way to learn Bitcoin</h2>
+                <p>Step-by-step guides, plain English explanations, and practical tools to help you go from curious to confident.</p>
+                <div class="mobile-feature-grid">
+                    <div class="mobile-feature-item">Beginner friendly</div>
+                    <div class="mobile-feature-item">Safe &amp; practical</div>
+                    <div class="mobile-feature-item">Clear roadmap</div>
+                    <div class="mobile-feature-item">No hype, just facts</div>
+                </div>
+            </section>
+
+            <section class="mobile-qa-card" aria-labelledby="mobile-qa-title">
+                <div class="mobile-section-head">
+                    <h2 id="mobile-qa-title">Quick answers</h2>
+                    <a href="#quick-takeaways">View all FAQs →</a>
+                </div>
+                <a class="mobile-faq-row" href="#quick-takeaways">Do I need to buy a full Bitcoin?</a>
+                <a class="mobile-faq-row" href="#quick-takeaways">What is the safest first step?</a>
+            </section>
+
+            <section class="mobile-why-card" aria-labelledby="mobile-why-title">
+                <h2 id="mobile-why-title">Why Bitcoin matters</h2>
+                <div class="mobile-why-grid">
+                    <article class="mobile-why-item">
+                        <h3>Financial freedom</h3>
+                        <p>Take control of your money and your future.</p>
+                    </article>
+                    <article class="mobile-why-item">
+                        <h3>Sound money</h3>
+                        <p>Scarce, secure, and built to last.</p>
+                    </article>
+                    <article class="mobile-why-item">
+                        <h3>Global &amp; permissionless</h3>
+                        <p>Send and receive value anywhere, anytime.</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mobile-home-footer">
+            <p><span>₿</span> The Satoshi Chronicles</p>
+            <p>Learn. Understand. Own Bitcoin.</p>
+        </footer>
+    </section>
+
+    <nav class="desktop-home-nav">
         <ul>
             <li><a href="home.html" aria-current="page">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -22,7 +141,7 @@
             <li><a href="whatif.html">Tools</a></li>
         </ul>
     </nav>
-    <main id="main-content" class="container">
+    <main id="main-content" class="container desktop-home-main">
         <section class="hero">
             <div class="hero-text">
                 <p class="eyebrow">Bitcoin, explained simply</p>
@@ -450,7 +569,7 @@
                 </section>
     </main>
 
-    <footer>
+    <footer class="desktop-home-footer">
         <p>This site is for educational purposes only and does not constitute financial advice.</p>
     </footer>
         <script type="text/javascript" src="js/main.js"></script>
