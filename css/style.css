@@ -8,6 +8,15 @@
     --surface-strong: #f1f5f9;
     --border: rgba(0, 0, 0, 0.08);
     --shadow: 0 14px 32px rgba(15, 23, 42, 0.12);
+    --bg: #07090b;
+    --panel: #101418;
+    --panel-2: #151a20;
+    --text: #f5f1e8;
+    --muted: #a8a8a8;
+    --border-dark: rgba(255, 255, 255, 0.10);
+    --orange: #f7931a;
+    --orange-2: #ffad42;
+    --green: #3bd671;
 }
 
 *,
@@ -583,6 +592,10 @@ iframe {
     cursor: pointer;
 }
 
+.mobile-home-shell {
+    display: none;
+}
+
 /* Explain Bitcoin to Anyone page */
 .accordion-hint {
     margin-top: 0.9rem;
@@ -616,6 +629,387 @@ iframe {
     justify-content: space-between;
     font-size: 1rem;
     text-align: left;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 0;
+        background: var(--bg);
+        color: var(--text);
+    }
+
+    .desktop-home-nav,
+    .desktop-home-main,
+    .desktop-home-footer {
+        display: none;
+    }
+
+    .mobile-home-shell {
+        display: block;
+        max-width: 430px;
+        margin: 0 auto;
+        min-height: 100vh;
+        background: var(--bg);
+        color: var(--text);
+        padding-bottom: 1rem;
+    }
+
+    .mobile-top-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        padding: 0.9rem 1rem;
+        background: #0b0f13;
+        border-bottom: 1px solid var(--border-dark);
+    }
+
+    .mobile-brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.7rem;
+        color: var(--text);
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 1.15rem;
+        text-decoration: none;
+    }
+
+    .mobile-brand:hover,
+    .mobile-brand:focus-visible {
+        text-decoration: none;
+    }
+
+    .mobile-brand-icon {
+        width: 2.1rem;
+        height: 2.1rem;
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+        color: #fff;
+        font-weight: 700;
+        font-family: Georgia, 'Times New Roman', serif;
+        background: radial-gradient(circle at 30% 30%, var(--orange-2), var(--orange));
+    }
+
+    .mobile-brand-text {
+        max-width: 10.5rem;
+        line-height: 1.05;
+    }
+
+    .mobile-menu-btn {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 0.8rem;
+        border: 1px solid var(--border-dark);
+        background: var(--panel);
+        color: #f2f2f2;
+        font-size: 1.2rem;
+    }
+
+    .mobile-icon-nav {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        padding: 0.55rem 0.45rem 0;
+        border-bottom: 1px solid var(--border-dark);
+        background: #0d1116;
+    }
+
+    .mobile-nav-item {
+        display: grid;
+        justify-items: center;
+        gap: 0.22rem;
+        color: var(--muted);
+        font-size: 0.72rem;
+        text-decoration: none;
+        padding: 0.35rem 0.15rem 0.5rem;
+        border-bottom: 2px solid transparent;
+    }
+
+    .mobile-nav-icon {
+        font-size: 0.95rem;
+        line-height: 1;
+    }
+
+    .mobile-nav-item.is-active {
+        color: var(--orange);
+        border-bottom-color: var(--orange);
+    }
+
+    .mobile-home-main {
+        padding: 0.95rem 1rem 0;
+        display: grid;
+        gap: 0.9rem;
+    }
+
+    .mobile-hero-card,
+    .mobile-price-card,
+    .mobile-mini-stat,
+    .mobile-start-card,
+    .mobile-qa-card,
+    .mobile-why-card {
+        background: linear-gradient(180deg, #0f141a, #0d1217);
+        border: 1px solid var(--border-dark);
+        border-radius: 1rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .mobile-hero-card {
+        padding: 1.05rem;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .mobile-hero-title {
+        margin: 0;
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: clamp(2rem, 8vw, 2.25rem);
+        line-height: 1.05;
+        color: #fff;
+        display: grid;
+        gap: 0.15rem;
+    }
+
+    .mobile-title-accent {
+        color: var(--orange);
+    }
+
+    .mobile-hero-subheadline {
+        margin: 0.8rem 0 0;
+        color: #d3d3d3;
+        line-height: 1.48;
+        max-width: 19rem;
+    }
+
+    .mobile-hero-actions {
+        margin-top: 0.95rem;
+        display: grid;
+        gap: 0.55rem;
+        max-width: 13.5rem;
+    }
+
+    .mobile-btn {
+        border-radius: 999px;
+        padding: 0.62rem 0.95rem;
+        font-weight: 700;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .mobile-btn-primary {
+        background: var(--orange);
+        color: #141414;
+    }
+
+    .mobile-btn-outline {
+        background: transparent;
+        border: 1px solid var(--border-dark);
+        color: var(--text);
+    }
+
+    .mobile-hero-visual {
+        position: absolute;
+        right: -0.45rem;
+        bottom: -0.3rem;
+        width: 45%;
+        max-width: 11.25rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: radial-gradient(circle at center, rgba(247, 147, 26, 0.52), rgba(247, 147, 26, 0.04) 67%);
+        display: grid;
+        place-items: center;
+        pointer-events: none;
+    }
+
+    .mobile-hero-visual img {
+        width: 90%;
+        border-radius: 999px;
+        box-shadow: none;
+    }
+
+    .mobile-stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.6rem;
+    }
+
+    .mobile-price-card {
+        grid-column: 1 / -1;
+        padding: 0.9rem;
+    }
+
+    .mobile-price-kicker {
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        color: #e8e8e8;
+        font-size: 0.92rem;
+    }
+
+    .mobile-live {
+        color: var(--green);
+    }
+
+    .mobile-price-value {
+        margin: 0.45rem 0 0.35rem;
+        font-size: 1.85rem;
+        font-weight: 700;
+        color: #f8f8f8;
+    }
+
+    .mobile-price-change {
+        margin: 0;
+        color: var(--green);
+        font-weight: 600;
+        font-size: 0.95rem;
+    }
+
+    .mobile-mini-chart {
+        margin-top: 0.65rem;
+        height: 34px;
+        border-radius: 0.5rem;
+        background:
+            linear-gradient(130deg, transparent 0 17%, rgba(247, 147, 26, 0.92) 17% 21%, transparent 21% 36%, rgba(247, 147, 26, 0.88) 36% 44%, transparent 44% 60%, rgba(247, 147, 26, 0.93) 60% 66%, transparent 66% 82%, rgba(247, 147, 26, 0.96) 82% 88%, transparent 88% 100%),
+            rgba(255, 255, 255, 0.03);
+    }
+
+    .mobile-mini-stat {
+        padding: 0.9rem 0.8rem;
+        text-align: center;
+    }
+
+    .mobile-mini-stat h3 {
+        margin: 0;
+        font-size: 2rem;
+        line-height: 1;
+        font-family: Georgia, 'Times New Roman', serif;
+        color: var(--orange);
+    }
+
+    .mobile-mini-stat p {
+        margin: 0.55rem 0 0;
+        color: #dadada;
+        font-size: 0.9rem;
+        line-height: 1.35;
+    }
+
+    .mobile-start-card,
+    .mobile-qa-card,
+    .mobile-why-card {
+        padding: 0.95rem;
+    }
+
+    .mobile-section-label {
+        margin: 0;
+        color: var(--orange);
+        font-size: 0.86rem;
+        font-weight: 700;
+    }
+
+    .mobile-start-card h2,
+    .mobile-qa-card h2,
+    .mobile-why-card h2 {
+        margin: 0.35rem 0 0;
+        color: var(--text);
+        font-size: 1.55rem;
+        font-family: Georgia, 'Times New Roman', serif;
+    }
+
+    .mobile-start-card > p {
+        color: #d0d0d0;
+        margin: 0.55rem 0 0;
+        line-height: 1.45;
+    }
+
+    .mobile-feature-grid {
+        margin-top: 0.85rem;
+        display: grid;
+        gap: 0.6rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .mobile-feature-item {
+        background: var(--panel-2);
+        border: 1px solid var(--border-dark);
+        border-radius: 0.7rem;
+        padding: 0.62rem 0.5rem;
+        text-align: center;
+        font-size: 0.88rem;
+        color: #efefef;
+    }
+
+    .mobile-section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 0.6rem;
+    }
+
+    .mobile-section-head a {
+        color: var(--orange-2);
+        font-size: 0.88rem;
+    }
+
+    .mobile-faq-row {
+        margin-top: 0.65rem;
+        display: block;
+        background: var(--panel-2);
+        color: var(--text);
+        border: 1px solid var(--border-dark);
+        border-radius: 0.7rem;
+        padding: 0.72rem 0.85rem;
+        text-decoration: none;
+    }
+
+    .mobile-faq-row::after {
+        content: "›";
+        float: right;
+        color: #d8d8d8;
+    }
+
+    .mobile-why-grid {
+        margin-top: 0.65rem;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.55rem;
+    }
+
+    .mobile-why-item {
+        border: 1px solid var(--border-dark);
+        border-radius: 0.75rem;
+        background: var(--panel-2);
+        padding: 0.62rem 0.5rem;
+    }
+
+    .mobile-why-item h3 {
+        margin: 0;
+        color: var(--text);
+        font-size: 0.96rem;
+        line-height: 1.2;
+    }
+
+    .mobile-why-item p {
+        margin: 0.45rem 0 0;
+        color: #cfcfcf;
+        font-size: 0.8rem;
+        line-height: 1.3;
+    }
+
+    .mobile-home-footer {
+        margin: 1rem 1rem 0;
+        border-top: 1px solid var(--border-dark);
+        padding-top: 0.7rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 0.75rem;
+        color: #d0d0d0;
+        font-size: 0.75rem;
+    }
+
+    .mobile-home-footer p {
+        margin: 0;
+        color: inherit;
+        line-height: 1.4;
+    }
 }
 
 .audience-trigger:hover {
