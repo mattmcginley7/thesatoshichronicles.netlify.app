@@ -92,6 +92,10 @@ nav ul {
     flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    padding: 0.3rem 0.4rem;
 }
 
 nav li a {
@@ -100,9 +104,14 @@ nav li a {
     font-weight: bold;
     padding: 0.5rem 0.85rem;
     border-radius: 999px;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.18rem;
     letter-spacing: 0.3px;
     transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    min-width: 64px;
 }
 
 nav li a:hover {
@@ -114,6 +123,17 @@ nav li a:hover {
 nav li a[aria-current="page"] {
     background: rgba(247, 147, 26, 0.28);
     color: #ffffff;
+}
+
+.nav-icon {
+    font-size: 0.95rem;
+    line-height: 1;
+    opacity: 0.9;
+}
+
+.nav-label {
+    font-size: 0.78rem;
+    line-height: 1;
 }
 
 .site-brand {
@@ -142,7 +162,7 @@ nav li a[aria-current="page"] {
     font-weight: 700;
     line-height: 1;
     box-shadow: 0 0 16px rgba(247, 147, 26, 0.35), inset 0 -3px 0 rgba(0, 0, 0, 0.12);
-    transform: rotate(-14deg);
+    transform: rotate(12deg);
 }
 
 .site-brand-text {
@@ -985,11 +1005,20 @@ button:hover {
         justify-content: flex-start;
         gap: 0.25rem;
         width: 100%;
+        border-radius: 12px;
     }
 
     nav li a {
         padding: 0.35rem 0.55rem;
-        font-size: 0.8rem;
+        min-width: 58px;
+    }
+
+    .nav-icon {
+        font-size: 0.9rem;
+    }
+
+    .nav-label {
+        font-size: 0.74rem;
     }
 
     #btc,
