@@ -29,13 +29,13 @@ nav {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    padding: 0.75rem 1rem;
-    min-height: 78px;
+    padding: 0.55rem 1rem;
+    min-height: 72px;
 }
 
 body {
     margin: 0;
-    padding-top: 108px;
+    padding-top: 96px;
     font-family: 'Open Sans', Arial, sans-serif;
     background: radial-gradient(circle at top, #fff8ef 0%, var(--surface-muted) 45%, #f1f5f9 100%);
     color: var(--ink);
@@ -98,7 +98,7 @@ nav li a {
     text-decoration: none;
     color: #f5f1e8;
     font-weight: bold;
-    padding: 0.6rem 0.95rem;
+    padding: 0.5rem 0.85rem;
     border-radius: 999px;
     display: block;
     letter-spacing: 0.3px;
@@ -142,6 +142,7 @@ nav li a[aria-current="page"] {
     font-weight: 700;
     line-height: 1;
     box-shadow: 0 0 16px rgba(247, 147, 26, 0.35), inset 0 -3px 0 rgba(0, 0, 0, 0.12);
+    transform: rotate(-14deg);
 }
 
 .site-brand-text {
@@ -970,8 +971,8 @@ button:hover {
         flex-wrap: wrap;
         justify-content: flex-start;
         align-items: center;
-        padding: 0.75rem 1rem;
-        min-height: 80px;
+        padding: 0.5rem 1rem;
+        min-height: 72px;
     }
 
     .site-brand-text {
@@ -987,7 +988,7 @@ button:hover {
     }
 
     nav li a {
-        padding: 0.4rem 0.6rem;
+        padding: 0.35rem 0.55rem;
         font-size: 0.8rem;
     }
 
@@ -1363,7 +1364,7 @@ nav {
 
 @media (min-width: 768px) {
     body {
-        padding-top: 92px;
+        padding-top: 84px;
     }
 }
 
