@@ -18,18 +18,24 @@
 
 nav {
     width: 100%;
-    background: linear-gradient(90deg, var(--btc-orange), #ffb347);
+    background: #0b0f12;
     position: fixed;
     top: 0;
     left: 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4);
     z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    min-height: 78px;
 }
 
 body {
     margin: 0;
-    padding-top: 84px;
+    padding-top: 108px;
     font-family: 'Open Sans', Arial, sans-serif;
     background: radial-gradient(circle at top, #fff8ef 0%, var(--surface-muted) 45%, #f1f5f9 100%);
     color: var(--ink);
@@ -81,17 +87,16 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 0.5rem;
     flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    padding: 0.4rem 0.75rem;
 }
 
 nav li a {
     text-decoration: none;
-    color: #ffffff;
+    color: #f5f1e8;
     font-weight: bold;
     padding: 0.6rem 0.95rem;
     border-radius: 999px;
@@ -101,14 +106,52 @@ nav li a {
 }
 
 nav li a:hover {
-    background-color: rgba(255, 255, 255, 0.85);
-    color: #111827;
+    background-color: rgba(247, 147, 26, 0.15);
+    color: #ffffff;
     transform: translateY(-1px);
 }
 
 nav li a[aria-current="page"] {
-    background: #111827;
+    background: rgba(247, 147, 26, 0.28);
     color: #ffffff;
+}
+
+.site-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.site-brand:hover,
+.site-brand:focus-visible {
+    text-decoration: none;
+}
+
+.bitcoin-mark {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #f7931a;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1;
+    box-shadow: 0 0 16px rgba(247, 147, 26, 0.35), inset 0 -3px 0 rgba(0, 0, 0, 0.12);
+}
+
+.site-brand-text {
+    display: flex;
+    flex-direction: column;
+    color: #f5f1e8;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.08;
 }
 
 .page-hero {
@@ -923,12 +966,24 @@ button:hover {
 }
 
 @media (max-width: 600px) {
+    nav {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0.75rem 1rem;
+        min-height: 80px;
+    }
+
+    .site-brand-text {
+        font-size: 1rem;
+    }
+
     nav ul {
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: flex-start;
         gap: 0.25rem;
-        padding: 0.35rem 0.6rem;
+        width: 100%;
     }
 
     nav li a {
@@ -1303,7 +1358,13 @@ main.container::before {
 
 nav {
     backdrop-filter: blur(14px);
-    background: linear-gradient(90deg, rgba(247, 147, 26, 0.95), rgba(255, 179, 71, 0.92));
+    background: rgba(11, 15, 18, 0.94);
+}
+
+@media (min-width: 768px) {
+    body {
+        padding-top: 92px;
+    }
 }
 
 .hero,
