@@ -18,22 +18,65 @@
 
 nav {
     width: 100%;
-    background: linear-gradient(90deg, var(--btc-orange), #ffb347);
+    background: #0b0f12;
     position: fixed;
     top: 0;
     left: 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
     z-index: 10;
 }
 
 body {
     margin: 0;
-    padding-top: 84px;
+    padding-top: 126px;
     font-family: 'Open Sans', Arial, sans-serif;
     background: radial-gradient(circle at top, #fff8ef 0%, var(--surface-muted) 45%, #f1f5f9 100%);
     color: var(--ink);
     line-height: 1.7;
+}
+
+.nav-brand {
+    padding: 0.85rem 1rem 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brand-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    text-decoration: none;
+}
+
+.btc-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--btc-orange);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    font-weight: 700;
+    font-family: Georgia, 'Times New Roman', serif;
+    transform: rotate(-12deg);
+    box-shadow: 0 0 16px rgba(247, 147, 26, 0.4);
+}
+
+.brand-text {
+    display: inline-flex;
+    flex-direction: column;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #f5f1e8;
+    font-size: 1.95rem;
+    font-weight: 500;
+    line-height: 0.95;
+    letter-spacing: 0.2px;
+}
+
+.brand-text span {
+    display: block;
 }
 
 a {
@@ -78,37 +121,59 @@ img {
 
 nav ul {
     list-style-type: none;
-    padding: 0;
+    padding: 0.45rem 0.75rem;
     margin: 0;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 0.5rem;
     flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    padding: 0.4rem 0.75rem;
 }
 
 nav li a {
     text-decoration: none;
-    color: #ffffff;
-    font-weight: bold;
-    padding: 0.6rem 0.95rem;
+    color: rgba(245, 241, 232, 0.9);
+    font-weight: 600;
+    padding: 0.45rem 0.85rem;
     border-radius: 999px;
     display: block;
-    letter-spacing: 0.3px;
-    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    letter-spacing: 0.2px;
+    border: 1px solid transparent;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 nav li a:hover {
-    background-color: rgba(255, 255, 255, 0.85);
-    color: #111827;
-    transform: translateY(-1px);
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.16);
+    transform: none;
 }
 
 nav li a[aria-current="page"] {
-    background: #111827;
     color: #ffffff;
+    border-color: rgba(247, 147, 26, 0.6);
+    background: rgba(247, 147, 26, 0.16);
+}
+
+
+@media (min-width: 768px) {
+    body {
+        padding-top: 132px;
+    }
+
+    .nav-brand {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .brand-text {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
 }
 
 .page-hero {
@@ -923,17 +988,27 @@ button:hover {
 }
 
 @media (max-width: 600px) {
+    body {
+        padding-top: 120px;
+    }
+
+    .nav-brand {
+        padding: 0.75rem 1rem 0.65rem;
+    }
+
+    .brand-text {
+        font-size: 1.9rem;
+        line-height: 0.9;
+    }
+
     nav ul {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
         gap: 0.25rem;
         padding: 0.35rem 0.6rem;
     }
 
     nav li a {
-        padding: 0.4rem 0.6rem;
-        font-size: 0.8rem;
+        padding: 0.36rem 0.6rem;
+        font-size: 0.78rem;
     }
 
     #btc,
@@ -1299,11 +1374,6 @@ main.container::before {
         radial-gradient(circle at top left, rgba(255, 179, 71, 0.2), transparent 45%);
     pointer-events: none;
     z-index: -1;
-}
-
-nav {
-    backdrop-filter: blur(14px);
-    background: linear-gradient(90deg, rgba(247, 147, 26, 0.95), rgba(255, 179, 71, 0.92));
 }
 
 .hero,
