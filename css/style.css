@@ -29,7 +29,7 @@ nav {
 
 body {
     margin: 0;
-    padding-top: 126px;
+    padding-top: 164px;
     font-family: 'Open Sans', Arial, sans-serif;
     background: radial-gradient(circle at top, #fff8ef 0%, var(--surface-muted) 45%, #f1f5f9 100%);
     color: var(--ink);
@@ -119,47 +119,75 @@ img {
     margin: 0 auto;
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0.45rem 0.75rem;
+nav ul.global-icon-nav {
+    list-style: none;
     margin: 0;
-    display: flex;
-    justify-content: flex-start;
-    gap: 0.5rem;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    padding: 0.55rem 0.5rem 0.45rem;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: #0b0f12;
 }
 
-nav li a {
+nav ul.global-icon-nav li {
+    min-width: 0;
+}
+
+nav ul.global-icon-nav li a {
     text-decoration: none;
-    color: rgba(245, 241, 232, 0.9);
-    font-weight: 600;
-    padding: 0.45rem 0.85rem;
-    border-radius: 999px;
-    display: block;
+    color: #b7bcc3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.28rem;
+    padding: 0.2rem 0.15rem 0.45rem;
     letter-spacing: 0.2px;
-    border: 1px solid transparent;
-    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-nav li a:hover {
-    background-color: rgba(255, 255, 255, 0.08);
-    color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.16);
-    transform: none;
+nav ul.global-icon-nav li a:hover,
+nav ul.global-icon-nav li a:focus-visible {
+    color: #f5f1e8;
+    text-decoration: none;
 }
 
-nav li a[aria-current="page"] {
-    color: #ffffff;
-    border-color: rgba(247, 147, 26, 0.6);
-    background: rgba(247, 147, 26, 0.16);
+nav ul.global-icon-nav .nav-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul.global-icon-nav .nav-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+nav ul.global-icon-nav .nav-label {
+    font-size: 0.77rem;
+    font-weight: 600;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+nav ul.global-icon-nav li a[aria-current="page"] {
+    color: var(--btc-orange);
+    border-bottom-color: var(--btc-orange);
 }
 
 
 @media (min-width: 768px) {
     body {
-        padding-top: 132px;
+        padding-top: 170px;
     }
 
     .nav-brand {
@@ -171,8 +199,18 @@ nav li a[aria-current="page"] {
         font-size: 2rem;
     }
 
-    nav ul {
-        justify-content: center;
+    nav ul.global-icon-nav {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    nav ul.global-icon-nav li a {
+        gap: 0.32rem;
+        padding-bottom: 0.52rem;
+    }
+
+    nav ul.global-icon-nav .nav-label {
+        font-size: 0.82rem;
     }
 }
 
@@ -989,7 +1027,7 @@ button:hover {
 
 @media (max-width: 600px) {
     body {
-        padding-top: 120px;
+        padding-top: 152px;
     }
 
     .nav-brand {
@@ -1001,14 +1039,23 @@ button:hover {
         line-height: 0.9;
     }
 
-    nav ul {
-        gap: 0.25rem;
-        padding: 0.35rem 0.6rem;
+    nav ul.global-icon-nav {
+        padding: 0.5rem 0.3rem 0.38rem;
     }
 
-    nav li a {
-        padding: 0.36rem 0.6rem;
-        font-size: 0.78rem;
+    nav ul.global-icon-nav li a {
+        gap: 0.22rem;
+        padding: 0.18rem 0 0.4rem;
+    }
+
+    nav ul.global-icon-nav .nav-icon,
+    nav ul.global-icon-nav .nav-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    nav ul.global-icon-nav .nav-label {
+        font-size: 0.72rem;
     }
 
     #btc,
