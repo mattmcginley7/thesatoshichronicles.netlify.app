@@ -61,8 +61,8 @@
             </li>
         </ul>
     </nav>
-    <main id="main-content" class="container">
-        <section class="hero">
+    <main id="main-content" class="container homepage">
+        <section class="hero home-card">
             <div class="hero-text">
                 <p class="eyebrow">Bitcoin, explained simply</p>
                 <h1>The Satoshi Chronicles</h1>
@@ -71,25 +71,34 @@
                     <a class="button primary" href="#quick-takeaways">Start with the basics</a>
                     <a class="button ghost" href="howtobuy.html">Read the buying guide</a>
                 </div>
-                <div id="currentBTCPrice" class="price-card">Current Bitcoin Price: <span id="bitcoin-price"></span></div>
                 <div class="price-meta">Updated <span id="price-updated">--</span> · Price pulled from CoinGecko.</div>
             </div>
             <div class="hero-media">
                 <img src="Infinity21Million.png" alt="Illustration of the 21 million bitcoin supply cap" loading="lazy">
-                <div class="stat-grid">
-                    <div class="stat-card">
-                        <h3>21M</h3>
-                        <p>Hard capped supply.</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>100M</h3>
-                        <p>Satoshis in 1 Bitcoin.</p>
-                    </div>
-                </div>
+                <div id="currentBTCPrice" class="price-card">Current Bitcoin Price: <span id="bitcoin-price"></span></div>
             </div>
         </section>
 
-        <section class="page-nav" aria-labelledby="start-here">
+        <section class="home-dashboard" aria-label="Bitcoin quick stats and shortcuts">
+            <article class="mini-card mini-stat-card">
+                <h3>21M</h3>
+                <p>Hard capped supply.</p>
+            </article>
+            <article class="mini-card mini-stat-card">
+                <h3>100M</h3>
+                <p>Satoshis in 1 Bitcoin.</p>
+            </article>
+            <a class="mini-card mini-link-card" href="#quick-takeaways">
+                <h3>60-second basics</h3>
+                <p>Start with the fast summary.</p>
+            </a>
+            <a class="mini-card mini-link-card" href="howtobuy.html">
+                <h3>Buying guide</h3>
+                <p>Learn how to buy safely.</p>
+            </a>
+        </section>
+
+        <section class="page-nav home-card" aria-labelledby="start-here">
             <h2 id="start-here">Start here</h2>
             <p class="lead">This homepage is long, so here are the fastest ways to get what you need.</p>
             <div class="nav-grid">
@@ -102,7 +111,7 @@
             </div>
         </section>
 
-        <section class="confidence-strip" aria-labelledby="confidence-strip-heading">
+        <section class="confidence-strip home-card" aria-labelledby="confidence-strip-heading">
             <div class="confidence-card">
                 <p class="eyebrow">Start with confidence</p>
                 <h2 id="confidence-strip-heading">A calmer way to learn Bitcoin</h2>
@@ -124,7 +133,7 @@
             </div>
         </section>
 
-        <section class="faq">
+        <section class="faq home-card">
             <h2>Quick answers to common questions</h2>
             <div class="faq-grid">
                 <details>
@@ -142,7 +151,7 @@
             </div>
         </section>
 
-        <section id="quick-takeaways" class="intro-panel" aria-labelledby="quick-takeaways-heading">
+        <section id="quick-takeaways" class="intro-panel home-card" aria-labelledby="quick-takeaways-heading">
             <div>
                 <p class="eyebrow">Quick takeaways</p>
                 <h2 id="quick-takeaways-heading">The short version before the deep dive</h2>
@@ -156,6 +165,41 @@
             </ul>
         </section>
 
+        <section class="why-bitcoin home-card" aria-labelledby="why-bitcoin-heading">
+            <div class="section-title-row">
+                <h2 id="why-bitcoin-heading">Why Bitcoin matters</h2>
+                <a href="#whatIsBitcoin">Read the deep dive</a>
+            </div>
+            <div class="why-grid">
+                <article class="mini-card">
+                    <h3>Scarcity wins</h3>
+                    <p>Finite money preserves value better over long timeframes.</p>
+                </article>
+                <article class="mini-card">
+                    <h3>Self custody</h3>
+                    <p>Your wallet and seed phrase put ownership in your hands.</p>
+                </article>
+                <article class="mini-card">
+                    <h3>Open access</h3>
+                    <p>Bitcoin can be used globally without permission.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="home-links home-card" aria-labelledby="home-links-heading">
+            <div class="section-title-row">
+                <h2 id="home-links-heading">Keep exploring</h2>
+                <a href="moreresources.html">View all</a>
+            </div>
+            <div class="link-rows">
+                <a class="link-row" href="blog.html"><span>Latest blog posts</span><span aria-hidden="true">→</span></a>
+                <a class="link-row" href="whatif.html"><span>What-if calculators & tools</span><span aria-hidden="true">→</span></a>
+                <a class="link-row" href="explain-bitcoin-to-anyone.html"><span>Explain Bitcoin scripts</span><span aria-hidden="true">→</span></a>
+                <a class="link-row" href="moreresources.html"><span>More resources</span><span aria-hidden="true">→</span></a>
+            </div>
+        </section>
+
+        <section class="home-longform home-card" aria-labelledby="whatIsBitcoin">
         <h2 id="whatIsBitcoin">"Why Should I Care About Bitcoin?"</h2>
 
        
@@ -465,7 +509,9 @@
                     on using your own money. People will adopt an open currency like Bitcoin because it is simply better in every possible way.
                 </p>
 
-                <section class="cta-banner" aria-labelledby="cta-banner-heading">
+                </section>
+
+                <section class="cta-banner home-card" aria-labelledby="cta-banner-heading">
                     <div>
                         <p class="eyebrow">Ready for the practical step?</p>
                         <h2 id="cta-banner-heading">When the ideas click, learn how to buy safely.</h2>
@@ -476,7 +522,7 @@
                         <a class="button ghost" href="moreresources.html">Explore more resources</a>
                     </div>
                 </section>
-                <section class="page-directory" aria-label="Page directory">
+                <section class="page-directory home-card" aria-label="Page directory">
                     <h2>Explore the site</h2>
                     <ul class="page-links">
                         <li><a href="home.html" aria-current="page">Home</a></li>
