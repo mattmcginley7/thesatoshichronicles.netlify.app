@@ -121,18 +121,6 @@ function setupBlogDiscovery() {
             meta.textContent = meta.textContent + " · " + readMinutes + " min read";
         }
 
-        var header = card.querySelector(".blog-header");
-        var title = card.querySelector(".blog-title");
-        var firstParagraph = card.querySelector("p:not(.blog-meta):not(.blog-excerpt)");
-        if (header && title && firstParagraph && !header.querySelector(".blog-excerpt")) {
-            var excerpt = document.createElement("p");
-            excerpt.className = "blog-excerpt";
-            excerpt.textContent = firstParagraph.textContent.trim().slice(0, 180);
-            if (firstParagraph.textContent.trim().length > 180) {
-                excerpt.textContent += "…";
-            }
-            title.insertAdjacentElement("afterend", excerpt);
-        }
     });
 
     if (!filterButtons.length || !discoveryCards.length) {
