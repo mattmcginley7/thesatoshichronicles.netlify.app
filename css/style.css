@@ -2599,3 +2599,162 @@ body:has(.homepage) footer {
         max-width: 58%;
     }
 }
+
+/* Compact hamburger navigation shared by every page */
+body {
+    padding-top: 74px;
+}
+
+nav {
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 430px;
+    padding: 0.72rem 0.95rem 0.58rem;
+    background: rgba(5, 8, 11, 0.86);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.34);
+    backdrop-filter: blur(18px);
+}
+
+.nav-brand {
+    padding: 0;
+    border-bottom: 0;
+}
+
+.brand-link {
+    gap: 0.52rem;
+}
+
+.btc-logo {
+    width: 34px;
+    height: 34px;
+    font-size: 1.22rem;
+}
+
+.brand-text {
+    display: block;
+    font-family: 'Inter', 'Open Sans', Arial, sans-serif;
+    font-size: 0.98rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.brand-text span {
+    display: inline;
+}
+
+.nav-menu-toggle {
+    position: absolute;
+    top: 0.82rem;
+    right: 0.95rem;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 27px;
+    height: 21px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    z-index: 12;
+    cursor: pointer;
+}
+
+.nav-menu-toggle:hover,
+.nav-menu-toggle:focus-visible {
+    transform: none;
+    box-shadow: none;
+}
+
+.nav-menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 1.5px;
+    border-radius: 999px;
+    background: #d8d8d8;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+body.nav-open .nav-menu-toggle span:nth-child(1) {
+    transform: translateY(9.75px) rotate(45deg);
+}
+
+body.nav-open .nav-menu-toggle span:nth-child(2) {
+    opacity: 0;
+}
+
+body.nav-open .nav-menu-toggle span:nth-child(3) {
+    transform: translateY(-9.75px) rotate(-45deg);
+}
+
+nav ul.global-icon-nav,
+body:has(.homepage) .global-icon-nav {
+    position: absolute;
+    top: calc(100% + 0.45rem);
+    right: 0.85rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.32rem;
+    width: min(70vw, 190px);
+    margin: 0;
+    padding: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    background: rgba(11, 15, 18, 0.98);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.48);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+body.nav-open nav ul.global-icon-nav,
+body:has(.homepage).nav-open .global-icon-nav {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+nav ul.global-icon-nav li a,
+body:has(.homepage) .global-icon-nav li a {
+    min-height: 42px;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding: 0.42rem 0.55rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.035);
+}
+
+nav ul.global-icon-nav li a[aria-current="page"],
+body:has(.homepage) .global-icon-nav li a[aria-current="page"] {
+    border-color: rgba(247, 147, 26, 0.7);
+    border-bottom-color: rgba(247, 147, 26, 0.7);
+    background: rgba(247, 147, 26, 0.11);
+}
+
+nav ul.global-icon-nav .nav-icon,
+nav ul.global-icon-nav .nav-icon svg,
+body:has(.homepage) .global-icon-nav .nav-icon,
+body:has(.homepage) .global-icon-nav .nav-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+nav ul.global-icon-nav .nav-label,
+body:has(.homepage) .global-icon-nav .nav-label {
+    font-size: 0.78rem;
+    font-weight: 500;
+}
+
+@media (min-width: 768px) {
+    body {
+        padding-top: 74px;
+    }
+
+    nav {
+        max-width: 720px;
+    }
+}
