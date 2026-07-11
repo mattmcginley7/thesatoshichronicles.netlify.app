@@ -163,7 +163,39 @@ function setupBlogDiscovery() {
     applyFilter("all");
 }
 
+function setupNavigationMenu() {
+    var toggle = document.querySelector(".nav-menu-toggle");
+    var menu = document.querySelector(".global-icon-nav");
+
+    if (!toggle || !menu) {
+        return;
+    }
+
+    toggle.addEventListener("click", function () {
+        var isOpen = document.body.classList.toggle("nav-open");
+        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        toggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+    });
+
+    menu.addEventListener("click", function (event) {
+        if (event.target.closest("a")) {
+            document.body.classList.remove("nav-open");
+            toggle.setAttribute("aria-expanded", "false");
+            toggle.setAttribute("aria-label", "Open navigation menu");
+        }
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            document.body.classList.remove("nav-open");
+            toggle.setAttribute("aria-expanded", "false");
+            toggle.setAttribute("aria-label", "Open navigation menu");
+        }
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+    setupNavigationMenu();
     setupProgressTracker();
     setupBlogDiscovery();
 });
