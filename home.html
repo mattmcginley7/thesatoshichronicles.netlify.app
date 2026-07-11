@@ -7,7 +7,7 @@
     <title>The Satoshi Chronicles</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -64,74 +64,77 @@
     <main id="main-content" class="container homepage">
         <section class="hero home-card">
             <div class="hero-text">
-                <h1><span class="hero-title-main">Bitcoin,</span> <span class="hero-title-accent">explained simply</span></h1>
-                <p class="lead">A beginner-friendly map to understand what Bitcoin is, why it matters, and how to own it safely without getting overwhelmed.</p>
+                <p class="eyebrow">Bitcoin, explained simply</p>
+                <h1>The Satoshi Chronicles</h1>
+                <p class="lead">A beginner-friendly guide to understand Bitcoin, why it matters, and how to own it safely.</p>
                 <div class="hero-actions">
-                    <a class="button primary" href="#quick-takeaways">Start with the basics</a>
-                    <a class="button ghost" href="howtobuy.html">Read the buying guide</a>
+                    <a class="button primary" href="#quick-takeaways">Start with the basics <span aria-hidden="true">→</span></a>
+                    <a class="button ghost" href="howtobuy.html">Read the buying guide <span aria-hidden="true">→</span></a>
                 </div>
-            </div>
-            <div class="hero-visual" aria-hidden="true">
-                <span class="coin-glow"></span>
             </div>
         </section>
 
         <section class="home-dashboard" aria-label="Bitcoin quick stats and shortcuts">
             <article id="currentBTCPrice" class="mini-card price-dashboard-card">
                 <p class="dashboard-label">Current Bitcoin Price <span class="live-dot">Live</span></p>
-                <h2><span id="bitcoin-price"></span></h2>
+                <div class="price-row">
+                    <span class="price-badge" aria-hidden="true">₿</span>
+                    <div>
+                        <h2><span id="bitcoin-price"></span></h2>
+                        <p class="price-change">+1.38% (24h) ▲</p>
+                    </div>
+                    <span class="sparkline" aria-hidden="true"><svg viewBox="0 0 140 48"><path d="M3 37 C18 33 20 27 32 29 S48 13 60 20 74 38 86 27 96 11 108 15 116 29 137 8"/></svg></span>
+                </div>
                 <p class="dashboard-footnote">Updated <span id="price-updated">--</span> · Price from CoinGecko</p>
-                <p class="dashboard-footnote">USD market price</p>
             </article>
             <article class="mini-card mini-stat-card">
-                <h3>21M</h3>
-                <p>Hard capped supply</p>
+                <span class="mini-icon" aria-hidden="true">◎</span>
+                <div><h3>21M</h3><p>Hard capped supply</p></div>
             </article>
             <article class="mini-card mini-stat-card">
-                <h3>100M</h3>
-                <p>Satoshis in 1 Bitcoin</p>
+                <span class="mini-icon" aria-hidden="true">▱</span>
+                <div><h3>100M</h3><p>Satoshis in 1 Bitcoin</p></div>
             </article>
         </section>
 
-        <section class="quick-answers-panel home-card" aria-labelledby="quick-answers-title">
-            <div class="section-title-row">
-                <h2 id="quick-answers-title">Quick answers</h2>
-                <a href="#quick-takeaways">View all FAQs →</a>
-            </div>
-            <div class="quick-answer-list">
-                <a class="faq-row" href="#quick-takeaways">Do I need to buy a full Bitcoin?<span aria-hidden="true">›</span></a>
-                <a class="faq-row" href="#quick-takeaways">What is the safest first step?<span aria-hidden="true">›</span></a>
+        <section class="start-here-panel" aria-labelledby="start-here-heading">
+            <p class="section-kicker" id="start-here-heading">Start here</p>
+            <div class="start-here-grid">
+                <a class="compact-feature" href="#quick-takeaways"><span>⚡</span><strong>60-second version</strong></a>
+                <a class="compact-feature" href="#whatIsBitcoin"><span>♡</span><strong>Why Bitcoin matters</strong></a>
+                <a class="compact-feature" href="#what-is-money"><span>?</span><strong>What money is</strong></a>
+                <a class="compact-feature" href="explain-bitcoin-to-anyone.html"><span>◉</span><strong>Why Bitcoin is different</strong></a>
+                <a class="compact-feature" href="whatif.html"><span>⌁</span><strong>How price fits in</strong></a>
+                <a class="compact-feature" href="howtobuy.html"><span>◇</span><strong>Ready to buy safely?</strong></a>
             </div>
         </section>
 
-        <section class="why-bitcoin home-card" aria-labelledby="why-bitcoin-heading">
-            <h2 id="why-bitcoin-heading">Why Bitcoin matters</h2>
+        <section class="why-bitcoin" aria-labelledby="why-bitcoin-heading">
+            <p class="section-kicker">A calmer way to learn Bitcoin</p>
             <div class="why-grid">
-                <article class="mini-card">
-                    <h3>Financial freedom</h3>
-                    <p>Take control of your money and your future.</p>
-                </article>
-                <article class="mini-card">
-                    <h3>Sound money</h3>
-                    <p>Scarce, secure, and built to last.</p>
-                </article>
-                <article class="mini-card">
-                    <h3>Global &amp; permissionless</h3>
-                    <p>Send and receive value anywhere, anytime.</p>
-                </article>
+                <article class="mini-card"><span class="mini-icon" aria-hidden="true">♙</span><h3>Beginner focused</h3><p>Clear explanations, no jargon, no hype. Just Bitcoin.</p></article>
+                <article class="mini-card"><span class="mini-icon" aria-hidden="true">◇</span><h3>Safety first</h3><p>Best practices to help you protect your Bitcoin.</p></article>
+                <article class="mini-card"><span class="mini-icon" aria-hidden="true">◌</span><h3>Built to explore</h3><p>Follow a path that helps you learn at your own pace.</p></article>
             </div>
         </section>
 
-        <section class="home-links home-card" aria-labelledby="home-links-heading">
-            <div class="section-title-row">
-                <h2 id="home-links-heading">Keep exploring</h2>
-                <a href="moreresources.html">View all</a>
+        <section class="quick-answers-panel" aria-labelledby="quick-answers-title">
+            <p class="section-kicker" id="quick-answers-title">Quick answers</p>
+            <div class="quick-answer-list">
+                <a class="faq-row" href="#quick-takeaways">Is Bitcoin a good investment?<span aria-hidden="true">⌄</span></a>
+                <a class="faq-row" href="#quick-takeaways">How does Bitcoin actually work?<span aria-hidden="true">⌄</span></a>
+                <a class="faq-row" href="#quick-takeaways">Is Bitcoin safe to buy and hold?<span aria-hidden="true">⌄</span></a>
             </div>
-            <div class="link-rows">
-                <a class="link-row" href="blog.html"><span>Latest blog posts</span><span aria-hidden="true">→</span></a>
-                <a class="link-row" href="whatif.html"><span>What-if calculators &amp; tools</span><span aria-hidden="true">→</span></a>
-                <a class="link-row" href="explain-bitcoin-to-anyone.html"><span>Explain Bitcoin scripts</span><span aria-hidden="true">→</span></a>
-                <a class="link-row" href="moreresources.html"><span>More resources</span><span aria-hidden="true">→</span></a>
+        </section>
+
+        <section class="home-links" aria-labelledby="home-links-heading">
+            <div class="section-title-row">
+                <p class="section-kicker" id="home-links-heading">Explore more</p>
+                <a href="blog.html">View all articles →</a>
+            </div>
+            <div class="article-strip">
+                <a class="article-card" href="#whatIsBitcoin"><img src="8E9D877D-AC95-4140-8D0C-0CB91E423ABA.png" alt="Bitcoin mountain path"><span><strong>Why Should I Care About Bitcoin?</strong><small>Understand why Bitcoin matters more than ever.</small></span></a>
+                <a class="article-card" href="#h2Bitcoin"><img src="bitcoin.png" alt="Bitcoin coin"><span><strong>Bitcoin, the Best Money</strong><small>Explore what makes Bitcoin hard money.</small></span></a>
             </div>
         </section>
 

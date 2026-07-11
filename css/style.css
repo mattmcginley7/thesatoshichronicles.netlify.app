@@ -2137,3 +2137,383 @@ footer {
         grid-column: span 2;
     }
 }
+
+/* Mobile mockup-inspired homepage refresh */
+body:has(.homepage) {
+    padding-top: 74px;
+    font-family: 'Inter', 'Open Sans', Arial, sans-serif;
+    background:
+        radial-gradient(circle at 8% 78%, rgba(247, 147, 26, 0.18), transparent 22rem),
+        linear-gradient(180deg, #05070a 0%, #090d11 48%, #05070a 100%);
+    line-height: 1.45;
+}
+
+body:has(.homepage) nav {
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 430px;
+    padding: 0.72rem 0.95rem 0.58rem;
+    background: rgba(5, 8, 11, 0.86);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.34);
+    backdrop-filter: blur(18px);
+}
+
+body:has(.homepage) .nav-brand {
+    padding: 0;
+    border-bottom: 0;
+}
+
+body:has(.homepage) .brand-link {
+    gap: 0.52rem;
+}
+
+body:has(.homepage) .btc-logo {
+    width: 34px;
+    height: 34px;
+    font-size: 1.22rem;
+}
+
+body:has(.homepage) .brand-text {
+    display: block;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 0.98rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+body:has(.homepage) .brand-text span {
+    display: inline;
+}
+
+body:has(.homepage) .global-icon-nav {
+    position: absolute;
+    top: 0.82rem;
+    right: 0.95rem;
+    display: block;
+    width: 29px;
+    height: 23px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    background: linear-gradient(#d8d8d8 0 0) top/100% 2px no-repeat,
+        linear-gradient(#d8d8d8 0 0) center/100% 2px no-repeat,
+        linear-gradient(#d8d8d8 0 0) bottom/100% 2px no-repeat;
+}
+
+body:has(.homepage) .global-icon-nav li {
+    display: none;
+}
+
+.homepage {
+    max-width: 430px;
+    padding: 0 0.95rem 1.15rem;
+    gap: 0.7rem;
+}
+
+.homepage .home-card,
+.homepage .cta-banner,
+.homepage .page-directory,
+.homepage .mini-card,
+.homepage .faq-row,
+.homepage .link-row,
+.homepage .compact-feature,
+.homepage .article-card {
+    background: linear-gradient(180deg, rgba(21, 26, 33, 0.88), rgba(12, 16, 21, 0.9));
+    border: 1px solid rgba(255, 255, 255, 0.095);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 10px 24px rgba(0, 0, 0, 0.22);
+}
+
+.homepage .hero {
+    min-height: 330px;
+    padding: 1.15rem 1rem;
+    align-items: start;
+    border-radius: 0;
+    background:
+        linear-gradient(90deg, rgba(5, 7, 10, 0.98) 0%, rgba(5, 7, 10, 0.82) 45%, rgba(5, 7, 10, 0.34) 76%),
+        linear-gradient(0deg, rgba(5, 7, 10, 0.94), rgba(5, 7, 10, 0.04) 55%),
+        url('../8E9D877D-AC95-4140-8D0C-0CB91E423ABA.png') 66% 50% / cover no-repeat;
+}
+
+.homepage .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 78% 36%, rgba(247, 147, 26, 0.28), transparent 8rem);
+    pointer-events: none;
+}
+
+.homepage .hero-text {
+    position: relative;
+    z-index: 1;
+    max-width: 76%;
+}
+
+.homepage .eyebrow,
+.homepage .section-kicker {
+    margin: 0;
+    color: var(--orange-2);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+}
+
+.homepage .hero h1 {
+    margin-top: 0.42rem;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2.45rem, 12.5vw, 3.45rem);
+    line-height: 0.93;
+    letter-spacing: -0.045em;
+    text-shadow: 0 3px 18px rgba(0, 0, 0, 0.75);
+}
+
+.homepage .lead {
+    font-size: 0.94rem;
+    line-height: 1.46;
+    color: rgba(238, 241, 244, 0.82);
+}
+
+.homepage .hero-actions {
+    gap: 0.45rem;
+    margin-top: 0.86rem;
+}
+
+.homepage .button {
+    min-height: 43px;
+    padding: 0.58rem 0.9rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+.homepage .button.primary {
+    color: #fff7ec;
+    background: linear-gradient(180deg, #ff9b19, #ef8208);
+    border-color: rgba(255, 177, 65, 0.7);
+}
+
+.homepage .button.ghost {
+    background: rgba(6, 9, 13, 0.72);
+    color: #f5f1e8;
+    border-color: rgba(255, 255, 255, 0.22);
+}
+
+.homepage .home-dashboard {
+    gap: 0.55rem;
+}
+
+.homepage .mini-card {
+    padding: 0.72rem;
+    border-radius: 8px;
+}
+
+.homepage .price-row,
+.homepage .mini-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.homepage .price-badge {
+    width: 45px;
+    height: 45px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: white;
+    background: var(--orange);
+    font-family: Georgia, serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    transform: rotate(-12deg);
+}
+
+.homepage .price-dashboard-card h2 {
+    margin: 0;
+    font-size: 1.65rem;
+}
+
+.homepage .price-change {
+    margin: 0.05rem 0 0;
+    color: var(--green);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.homepage .sparkline {
+    margin-left: auto;
+    width: 115px;
+}
+
+.homepage .sparkline path {
+    fill: none;
+    stroke: var(--orange-2);
+    stroke-width: 3;
+    stroke-linecap: round;
+}
+
+.homepage .dashboard-footnote {
+    display: none;
+}
+
+.homepage .mini-icon {
+    color: var(--orange-2);
+    font-size: 1.55rem;
+    line-height: 1;
+}
+
+.homepage .mini-stat-card h3 {
+    font-family: 'Inter', Arial, sans-serif;
+    color: #f4f4f4;
+    font-size: 1.55rem;
+}
+
+.homepage .mini-stat-card p,
+.homepage .why-grid p {
+    margin-top: 0.1rem;
+    font-size: 0.75rem;
+    line-height: 1.25;
+}
+
+.homepage .start-here-panel,
+.homepage .why-bitcoin,
+.homepage .quick-answers-panel,
+.homepage .home-links {
+    margin: 0;
+}
+
+.homepage .start-here-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.45rem;
+    margin-top: 0.45rem;
+}
+
+.homepage .compact-feature {
+    min-height: 54px;
+    padding: 0.55rem;
+    border-radius: 8px;
+    color: var(--text);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.72rem;
+    line-height: 1.1;
+}
+
+.homepage .compact-feature span {
+    color: var(--orange-2);
+    font-size: 1rem;
+}
+
+.homepage .why-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.55rem;
+    margin-top: 0.5rem;
+}
+
+.homepage .why-grid .mini-card {
+    min-height: 124px;
+}
+
+.homepage .why-grid h3 {
+    margin-top: 0.35rem;
+    font-size: 0.88rem;
+    line-height: 1.18;
+}
+
+.homepage .quick-answer-list {
+    gap: 0.35rem;
+    margin-top: 0.45rem;
+}
+
+.homepage .faq-row {
+    padding: 0.54rem 0.7rem;
+    border-radius: 7px;
+    font-size: 0.8rem;
+}
+
+.homepage .section-title-row {
+    margin-bottom: 0.5rem;
+}
+
+.homepage .section-title-row a {
+    font-size: 0.75rem;
+}
+
+.homepage .article-strip {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+}
+
+.homepage .article-card {
+    overflow: hidden;
+    border-radius: 8px;
+    color: var(--text);
+    text-decoration: none;
+    display: grid;
+    grid-template-columns: 46% 1fr;
+}
+
+.homepage .article-card img {
+    width: 100%;
+    height: 100%;
+    min-height: 106px;
+    object-fit: cover;
+}
+
+.homepage .article-card span {
+    padding: 0.65rem;
+}
+
+.homepage .article-card strong,
+.homepage .article-card small {
+    display: block;
+}
+
+.homepage .article-card strong {
+    font-size: 0.83rem;
+    line-height: 1.15;
+}
+
+.homepage .article-card small {
+    margin-top: 0.42rem;
+    color: var(--muted);
+    font-size: 0.68rem;
+    line-height: 1.25;
+}
+
+.homepage .intro-panel,
+.homepage .home-longform,
+.homepage .cta-banner {
+    margin-top: 0.2rem;
+}
+
+.homepage .home-longform {
+    font-size: 0.95rem;
+}
+
+body:has(.homepage) footer {
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 0.65rem 0.95rem 1rem;
+    font-size: 0.72rem;
+    background: rgba(5, 8, 11, 0.9);
+}
+
+@media (min-width: 768px) {
+    body:has(.homepage) nav,
+    body:has(.homepage) footer,
+    .homepage {
+        max-width: 720px;
+    }
+
+    .homepage .hero-text {
+        max-width: 58%;
+    }
+}
