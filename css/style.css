@@ -2758,3 +2758,187 @@ body:has(.homepage) .global-icon-nav .nav-label {
         max-width: 720px;
     }
 }
+
+/* Shared compact app layout for secondary pages */
+body:has(.app-page) {
+    font-family: 'Inter', 'Open Sans', Arial, sans-serif;
+    background:
+        radial-gradient(circle at 8% 78%, rgba(247, 147, 26, 0.18), transparent 22rem),
+        linear-gradient(180deg, #05070a 0%, #090d11 48%, #05070a 100%);
+    line-height: 1.5;
+}
+
+.app-page {
+    max-width: 430px;
+    padding: 0 0.95rem 1.4rem;
+    display: grid;
+    gap: 0.8rem;
+}
+
+.app-page .page-hero,
+.app-page .content-panel,
+.app-page .blog-index,
+.app-page .blog-card,
+.app-page .resource-card,
+.app-page .calculator-card,
+.app-page .faq,
+.app-page .audience-item,
+.app-page .whitepaper-card,
+.app-page .referral,
+.app-page .starter-kit,
+.app-page .progress-tracker,
+.app-page .callout,
+.app-page .learning-path,
+.app-page .concept-card,
+.app-page .kit-card,
+.app-page main.container > p,
+.app-page > p,
+.app-page > ul,
+.app-page > ol,
+.app-page > aside {
+    background: linear-gradient(180deg, rgba(21, 26, 33, 0.88), rgba(12, 16, 21, 0.9));
+    border: 1px solid rgba(255, 255, 255, 0.095);
+    border-radius: 12px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 10px 24px rgba(0, 0, 0, 0.22);
+    margin: 0;
+}
+
+.app-page .page-hero {
+    min-height: 240px;
+    padding: 1.15rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0;
+    background:
+        linear-gradient(90deg, rgba(5, 7, 10, 0.98) 0%, rgba(5, 7, 10, 0.82) 46%, rgba(5, 7, 10, 0.42) 76%),
+        linear-gradient(0deg, rgba(5, 7, 10, 0.94), rgba(5, 7, 10, 0.08) 58%),
+        url('../8E9D877D-AC95-4140-8D0C-0CB91E423ABA.png') 66% 50% / cover no-repeat;
+}
+
+.app-page .page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 78% 36%, rgba(247, 147, 26, 0.28), transparent 8rem);
+    pointer-events: none;
+}
+
+.app-page .page-hero > * {
+    position: relative;
+    z-index: 1;
+    max-width: 82%;
+}
+
+.app-page .page-hero h1 {
+    margin: 0.35rem 0 0;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2.25rem, 11vw, 3.25rem);
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+    text-shadow: 0 3px 18px rgba(0, 0, 0, 0.75);
+}
+
+.app-page .page-hero .lead,
+.app-page .accordion-hint {
+    margin-top: 0.7rem;
+    font-size: 0.92rem;
+    line-height: 1.45;
+    color: rgba(238, 241, 244, 0.82);
+}
+
+.app-page .eyebrow,
+.app-page .blog-meta,
+.app-page .blog-index-meta {
+    color: var(--orange-2);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.11em;
+}
+
+.app-page .price-card,
+.app-page #currentBTCPrice {
+    max-width: 100%;
+    margin-top: 0.8rem;
+    padding: 0.7rem 0.8rem;
+    border-radius: 9px;
+    font-size: 0.95rem;
+    text-align: left;
+}
+
+.app-page .content-panel,
+.app-page .blog-index,
+.app-page .blog-card,
+.app-page .resource-card,
+.app-page .calculator-card,
+.app-page .faq {
+    padding: 1rem;
+}
+
+.app-page h2,
+.app-page h3,
+.app-page h4 {
+    margin-top: 1rem;
+}
+
+.app-page p,
+.app-page li,
+.app-page label,
+.app-page small {
+    font-size: 0.94rem;
+    line-height: 1.55;
+}
+
+.app-page .button,
+.app-page button {
+    min-height: 42px;
+    border-radius: 8px;
+    padding: 0.58rem 0.9rem;
+}
+
+.app-page .referral-grid,
+.app-page .calculator-grid,
+.app-page .blog-index-grid,
+.app-page .resource-grid,
+.app-page .concept-grid,
+.app-page .kit-grid {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+}
+
+.app-page .blog-index-card,
+.app-page .audience-trigger,
+.app-page .faq details,
+.app-page .simulator-entry,
+.app-page .timeline li,
+.app-page .intro-list li {
+    border-radius: 8px;
+    background: rgba(11, 16, 22, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.app-page img,
+.app-page iframe {
+    border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+    .app-page {
+        max-width: 720px;
+    }
+
+    .app-page .page-hero {
+        min-height: 300px;
+    }
+
+    .app-page .referral-grid,
+    .app-page .calculator-grid,
+    .app-page .blog-index-grid,
+    .app-page .resource-grid,
+    .app-page .concept-grid,
+    .app-page .kit-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
