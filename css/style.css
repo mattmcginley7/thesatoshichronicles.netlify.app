@@ -2137,3 +2137,232 @@ footer {
         grid-column: span 2;
     }
 }
+
+/* Mockup-inspired homepage refresh */
+.homepage {
+    max-width: 560px;
+    gap: 0.65rem;
+    padding: 0 0.85rem 1.4rem;
+}
+
+.homepage .home-card,
+.homepage .home-dashboard,
+.homepage .start-here-panel {
+    border-radius: 14px;
+}
+
+.homepage .hero {
+    min-height: 326px;
+    padding: 1.35rem;
+    align-items: end;
+    background:
+        linear-gradient(90deg, rgba(7, 9, 11, 0.97) 0%, rgba(7, 9, 11, 0.77) 48%, rgba(7, 9, 11, 0.26) 100%),
+        linear-gradient(180deg, rgba(7, 9, 11, 0.20), rgba(7, 9, 11, 0.92)),
+        url("../8E9D877D-AC95-4140-8D0C-0CB91E423ABA.png") center right / cover no-repeat;
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+.homepage .hero-text {
+    max-width: 78%;
+    gap: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.homepage .hero .eyebrow {
+    margin-bottom: 0.5rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    color: var(--orange-2);
+}
+
+.homepage .hero h1 {
+    max-width: 8ch;
+    font-size: clamp(2.35rem, 11vw, 3.55rem);
+    color: #fff7ec;
+    text-shadow: 0 3px 24px rgba(0, 0, 0, 0.86);
+}
+
+.homepage .lead {
+    max-width: 28ch;
+    font-size: 0.96rem;
+    color: #d5dbe2;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.9);
+}
+
+.homepage .hero-actions {
+    gap: 0.45rem;
+    margin-top: 0.95rem;
+}
+
+.homepage .button {
+    min-height: 44px;
+    border-radius: 9px;
+    justify-content: space-between;
+    padding: 0.68rem 0.95rem;
+}
+
+.homepage .button.ghost {
+    background: rgba(9, 13, 17, 0.64);
+}
+
+.homepage .home-dashboard {
+    gap: 0.55rem;
+}
+
+.homepage .mini-card {
+    padding: 0.72rem;
+    border-radius: 12px;
+}
+
+.homepage .price-dashboard-card h2 {
+    font-size: 1.65rem;
+}
+
+.homepage .dashboard-footnote + .dashboard-footnote {
+    display: none;
+}
+
+.homepage .mini-stat-card h3 {
+    font-size: 1.65rem;
+}
+
+.homepage .mini-stat-card p,
+.homepage .dashboard-footnote {
+    font-size: 0.76rem;
+    line-height: 1.3;
+}
+
+.homepage .start-here-panel {
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+}
+
+.homepage .section-kicker {
+    margin: 0 0 0.45rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    font-size: 0.73rem;
+}
+
+.homepage .start-here-grid,
+.homepage .why-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.45rem;
+    margin-top: 0;
+}
+
+.homepage .compact-feature {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 0.45rem;
+    min-height: 56px;
+    padding: 0.58rem;
+    color: var(--text-soft);
+    text-decoration: none;
+}
+
+.homepage .compact-feature span {
+    color: var(--orange-2);
+    font-size: 1.1rem;
+}
+
+.homepage .compact-feature strong {
+    font-size: 0.78rem;
+    line-height: 1.15;
+}
+
+.homepage .quick-answers-panel,
+.homepage .why-bitcoin,
+.homepage .home-links,
+.homepage .intro-panel,
+.homepage .home-longform {
+    padding: 0.82rem;
+}
+
+.homepage .start-here-panel h2,
+.homepage .quick-answers-panel h2,
+.homepage .why-bitcoin h2,
+.homepage .home-links h2 {
+    font-size: 1rem;
+}
+
+.homepage .why-grid h3 {
+    font-size: 0.9rem;
+}
+
+.homepage .why-grid p,
+.homepage .faq-row,
+.homepage .link-row {
+    font-size: 0.82rem;
+    line-height: 1.25;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding-top: 72px;
+    }
+
+    nav {
+        background: rgba(7, 9, 11, 0.88);
+        backdrop-filter: blur(18px);
+    }
+
+    .nav-brand {
+        padding: 0.7rem 0.95rem;
+        border-bottom: 0;
+    }
+
+    .brand-link {
+        width: 100%;
+    }
+
+    .brand-link::after {
+        content: "☰";
+        margin-left: auto;
+        color: #d8dde2;
+        font-size: 1.85rem;
+        line-height: 1;
+    }
+
+    .btc-logo {
+        width: 36px;
+        height: 36px;
+        font-size: 1.22rem;
+    }
+
+    .brand-text {
+        flex-direction: row;
+        gap: 0.25rem;
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    nav ul.global-icon-nav {
+        display: none;
+    }
+
+    .homepage .hero {
+        min-height: 304px;
+    }
+}
+
+@media (min-width: 768px) {
+    .homepage {
+        max-width: 960px;
+    }
+
+    .homepage .hero {
+        min-height: 430px;
+    }
+
+    .homepage .hero-text {
+        max-width: 430px;
+    }
+}
