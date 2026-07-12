@@ -89,11 +89,11 @@ function renderWealthRace() {
         const deltaClass = realDelta >= 0 ? 'positive' : 'negative';
         return `
             <tr>
-                <td><span class="wealth-dot" style="--dot-color: ${row.color}"></span>${row.label}</td>
-                <td>${formatPercent(row.rate)}</td>
-                <td>${formatDollars(row.nominal)}</td>
-                <td>${formatDollars(row.real)}</td>
-                <td class="${deltaClass}">${formatSignedDollars(realDelta)}</td>
+                <td data-label="Option"><span class="wealth-dot" style="--dot-color: ${row.color}"></span>${row.label}</td>
+                <td data-label="Annual return">${formatPercent(row.rate)}</td>
+                <td data-label="Nominal value">${formatDollars(row.nominal)}</td>
+                <td data-label="Real value">${formatDollars(row.real)}</td>
+                <td data-label="Real gain/loss" class="${deltaClass}">${formatSignedDollars(realDelta)}</td>
             </tr>
         `;
     }).join('');
@@ -148,8 +148,9 @@ function renderWealthRace() {
                         color: '#f5f1e8',
                         usePointStyle: true,
                         pointStyle: 'circle',
-                        padding: 18,
-                        font: { family: 'Inter', weight: '700' }
+                        boxWidth: isCompactWealthViewport() ? 8 : 12,
+                        padding: isCompactWealthViewport() ? 10 : 18,
+                        font: { family: 'Inter', weight: '700', size: isCompactWealthViewport() ? 10 : 12 }
                     }
                 },
                 tooltip: {
@@ -167,13 +168,13 @@ function renderWealthRace() {
             },
             scales: {
                 x: {
-                    title: { display: true, text: 'Years', color: '#e7dfd2', font: { weight: '800' } },
-                    ticks: { color: '#cbd5e1', maxRotation: 0 },
+                    title: { display: !isCompactWealthViewport(), text: 'Years', color: '#e7dfd2', font: { weight: '800' } },
+                    ticks: { color: '#cbd5e1', maxRotation: 0, maxTicksLimit: isCompactWealthViewport() ? 6 : 11 },
                     grid: { color: 'rgba(255,255,255,0.06)' }
                 },
                 y: {
                     beginAtZero: true,
-                    ticks: { color: '#cbd5e1', callback: value => formatDollars(value) },
+                    ticks: { color: '#cbd5e1', maxTicksLimit: isCompactWealthViewport() ? 5 : 8, callback: value => formatDollars(value) },
                     grid: { color: 'rgba(255,255,255,0.08)' }
                 }
             }
@@ -183,6 +184,10 @@ function renderWealthRace() {
 
 function yearPointRadius(years) {
     return years > 18 ? 0 : 3;
+}
+
+function isCompactWealthViewport() {
+    return window.matchMedia('(max-width: 720px)').matches;
 }
 
 ['wealth-amount', 'wealth-years', 'inflation-rate', 'bitcoin-rate'].forEach(id => {

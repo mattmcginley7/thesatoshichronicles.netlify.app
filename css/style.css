@@ -2946,6 +2946,8 @@ body:has(.app-page) {
 .wealth-race-calculator {
     position: relative;
     overflow: hidden;
+    width: 100%;
+    min-width: 0;
     max-width: 1180px;
     margin: 0 auto 3rem;
     padding: clamp(1.25rem, 3vw, 2rem);
@@ -3013,6 +3015,7 @@ body:has(.app-page) {
 
 .wealth-dashboard {
     margin-top: 1.5rem;
+    min-width: 0;
 }
 
 .wealth-controls {
@@ -3105,6 +3108,7 @@ body:has(.app-page) {
 
 .chart-shell {
     margin-top: 1rem;
+    min-width: 0;
     padding: clamp(1rem, 2.5vw, 1.35rem);
     border: 1px solid rgba(255, 255, 255, 0.11);
     border-radius: 24px;
@@ -3113,6 +3117,7 @@ body:has(.app-page) {
 
 .chart-header {
     display: flex;
+    min-width: 0;
     justify-content: space-between;
     gap: 1rem;
     align-items: start;
@@ -3143,7 +3148,7 @@ body:has(.app-page) {
 
 .wealth-table-wrap {
     margin-top: 1rem;
-    overflow-x: auto;
+    overflow-x: hidden;
     border: 1px solid rgba(255, 255, 255, 0.10);
     border-radius: 18px;
     background: rgba(255, 255, 255, 0.045);
@@ -3220,11 +3225,146 @@ body:has(.app-page) {
 }
 
 @media (max-width: 720px) {
+    .app-page.calculators {
+        width: 100%;
+        padding-inline: max(0.75rem, env(safe-area-inset-left));
+        overflow-x: clip;
+    }
+
+    .app-page.calculators .page-hero > * {
+        max-width: 100%;
+    }
+
+    .wealth-race-calculator {
+        padding: 1rem;
+        border-radius: 22px;
+    }
+
+    .wealth-race-calculator::before {
+        inset: -8rem -12rem auto auto;
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .wealth-hero-copy h2 {
+        font-size: clamp(2rem, 13vw, 3.15rem);
+        letter-spacing: -0.052em;
+    }
+
+    .wealth-controls,
+    .wealth-summary {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .control-card,
+    .wealth-summary div,
+    .chart-shell,
+    .wealth-insight {
+        border-radius: 16px;
+    }
+
     .chart-header {
         display: block;
     }
 
     #wealth-chart-note {
         margin-top: 0.4rem;
+    }
+
+    #wealth-race-chart {
+        height: 320px !important;
+    }
+
+    .wealth-table-wrap {
+        border: 0;
+        background: transparent;
+    }
+
+    .wealth-table,
+    .wealth-table thead,
+    .wealth-table tbody,
+    .wealth-table tr,
+    .wealth-table td {
+        display: block;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .wealth-table {
+        border-collapse: separate;
+        border-spacing: 0 0.72rem;
+        font-size: 0.9rem;
+    }
+
+    .wealth-table thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+    }
+
+    .wealth-table tr {
+        padding: 0.8rem;
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.055);
+    }
+
+    .wealth-table td {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        padding: 0.52rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.075);
+        text-align: right;
+    }
+
+    .wealth-table td::before {
+        content: attr(data-label);
+        flex: 0 0 auto;
+        color: rgba(231, 223, 210, 0.66);
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-align: left;
+        text-transform: uppercase;
+    }
+
+    .wealth-table td:first-child {
+        justify-content: flex-start;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 900;
+        text-align: left;
+    }
+
+    .wealth-table td:first-child::before {
+        content: none;
+    }
+
+    .wealth-table tr:last-child td,
+    .wealth-table td:last-child {
+        border-bottom: 0;
+    }
+}
+
+@media (max-width: 390px) {
+    .app-page.calculators {
+        padding-inline: 0.6rem;
+    }
+
+    .wealth-race-calculator {
+        padding: 0.85rem;
+    }
+
+    .chart-shell {
+        padding: 0.85rem;
+    }
+
+    #wealth-race-chart {
+        height: 290px !important;
     }
 }
