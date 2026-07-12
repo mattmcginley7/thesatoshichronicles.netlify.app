@@ -346,3 +346,137 @@ const convictionBuy = document.getElementById('conviction-buy');
 if (convictionBuy) {
     convictionBuy.addEventListener('click', () => handleConvictionChoice('buy'));
 }
+
+const wealthRaceConfig = [
+    { key: 'savings', label: 'Bank savings', rate: 0.01, color: '#94a3b8' },
+    { key: 'treasuries', label: 'Treasury bonds', rate: 0.04, color: '#60a5fa' },
+    { key: 'sp500', label: 'S&P 500', rate: 0.10, color: '#34d399' },
+    { key: 'bitcoin', label: 'Bitcoin', rate: 0.24, color: '#f7931a' }
+];
+
+let wealthRaceChart;
+
+function formatDollars(value) {
+    return `$${formatCurrency(value)}`;
+}
+
+function updateRangeReadout(inputId, displayId, suffix) {
+    const input = document.getElementById(inputId);
+    const display = document.getElementById(displayId);
+    if (!input || !display) return;
+    const value = parseFloat(input.value);
+    display.textContent = suffix === 'years'
+        ? `${value} year${value === 1 ? '' : 's'}`
+        : `${value}%`;
+}
+
+function calculateCompoundedValue(principal, rate, years) {
+    return principal * Math.pow(1 + rate, years);
+}
+
+function renderWealthRace() {
+    const amountInput = document.getElementById('wealth-amount');
+    const yearsInput = document.getElementById('wealth-years');
+    const inflationInput = document.getElementById('inflation-rate');
+    const bitcoinInput = document.getElementById('bitcoin-rate');
+    const tableBody = document.getElementById('wealth-table-body');
+    const summary = document.getElementById('wealth-summary');
+    const canvas = document.getElementById('wealth-race-chart');
+
+    if (!amountInput || !yearsInput || !inflationInput || !bitcoinInput || !tableBody || !summary || !canvas) return;
+
+    updateRangeReadout('wealth-years', 'wealth-years-display', 'years');
+    updateRangeReadout('inflation-rate', 'inflation-rate-display', 'percent');
+    updateRangeReadout('bitcoin-rate', 'bitcoin-rate-display', 'percent');
+
+    const principal = parseNumber(amountInput.value) || 0;
+    const years = parseInt(yearsInput.value, 10);
+    const inflationRate = parseFloat(inflationInput.value) / 100;
+    const bitcoinRate = parseFloat(bitcoinInput.value) / 100;
+    const inflationAdjustedStartingPower = principal / Math.pow(1 + inflationRate, years);
+
+    const rows = wealthRaceConfig.map(option => {
+        const rate = option.key === 'bitcoin' ? bitcoinRate : option.rate;
+        const nominal = calculateCompoundedValue(principal, rate, years);
+        const real = nominal / Math.pow(1 + inflationRate, years);
+        return { ...option, rate, nominal, real };
+    });
+
+    const bitcoin = rows.find(row => row.key === 'bitcoin');
+    const savings = rows.find(row => row.key === 'savings');
+    const bestNonBitcoin = rows.filter(row => row.key !== 'bitcoin').sort((a, b) => b.real - a.real)[0];
+    const bitcoinMultiple = bestNonBitcoin && bestNonBitcoin.real > 0 ? bitcoin.real / bestNonBitcoin.real : 0;
+
+    summary.innerHTML = `
+        <div><strong>${formatDollars(principal)}</strong><span>Starting money</span></div>
+        <div><strong>${formatDollars(inflationAdjustedStartingPower)}</strong><span>Cash buying power after ${years} years at ${formatPercent(inflationRate)} inflation</span></div>
+        <div><strong>${bitcoinMultiple.toFixed(1)}×</strong><span>Bitcoin real-value multiple vs. best non-Bitcoin option</span></div>
+        <div><strong>${formatDollars(savings.real - principal)}</strong><span>Savings real gain/loss vs. today</span></div>
+    `;
+
+    tableBody.innerHTML = rows.map(row => {
+        const realDelta = row.real - principal;
+        const deltaClass = realDelta >= 0 ? 'positive' : 'negative';
+        return `
+            <tr>
+                <td><span class="wealth-dot" style="--dot-color: ${row.color}"></span>${row.label}</td>
+                <td>${formatPercent(row.rate)}</td>
+                <td>${formatDollars(row.nominal)}</td>
+                <td class="${deltaClass}">${formatDollars(row.real)} (${realDelta >= 0 ? '+' : ''}${formatDollars(realDelta)})</td>
+            </tr>
+        `;
+    }).join('');
+
+    if (typeof Chart === 'undefined') return;
+
+    const chartYears = Array.from({ length: years + 1 }, (_, index) => index);
+    const datasets = rows.map(row => ({
+        label: row.label,
+        data: chartYears.map(year => calculateCompoundedValue(principal, row.rate, year)),
+        borderColor: row.color,
+        backgroundColor: row.color,
+        tension: 0.35,
+        pointRadius: yearPointRadius(years)
+    }));
+
+    datasets.push({
+        label: 'Inflation hurdle',
+        data: chartYears.map(year => calculateCompoundedValue(principal, inflationRate, year)),
+        borderColor: '#ef4444',
+        backgroundColor: '#ef4444',
+        borderDash: [8, 6],
+        tension: 0.35,
+        pointRadius: yearPointRadius(years)
+    });
+
+    const ctx = canvas.getContext('2d');
+    if (wealthRaceChart) wealthRaceChart.destroy();
+    wealthRaceChart = new Chart(ctx, {
+        type: 'line',
+        data: { labels: chartYears, datasets },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { labels: { color: '#f5f1e8' } },
+                tooltip: { callbacks: { label: context => `${context.dataset.label}: ${formatDollars(context.parsed.y)}` } }
+            },
+            scales: {
+                x: { title: { display: true, text: 'Years', color: '#e7dfd2' }, ticks: { color: '#cbd5e1' }, grid: { color: 'rgba(255,255,255,0.08)' } },
+                y: { ticks: { color: '#cbd5e1', callback: value => formatDollars(value) }, grid: { color: 'rgba(255,255,255,0.08)' } }
+            }
+        }
+    });
+}
+
+function yearPointRadius(years) {
+    return years > 18 ? 0 : 3;
+}
+
+['wealth-amount', 'wealth-years', 'inflation-rate', 'bitcoin-rate'].forEach(id => {
+    const element = document.getElementById(id);
+    if (element) element.addEventListener('input', renderWealthRace);
+});
+
+if (document.getElementById('wealth-race-chart')) {
+    renderWealthRace();
+}
