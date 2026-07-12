@@ -2946,66 +2946,143 @@ body:has(.app-page) {
 .wealth-race-calculator {
     position: relative;
     overflow: hidden;
-    grid-column: 1 / -1;
+    max-width: 1180px;
+    margin: 0 auto 3rem;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border: 1px solid rgba(247, 147, 26, 0.22);
+    border-radius: 30px;
+    background:
+        radial-gradient(circle at top right, rgba(247, 147, 26, 0.28), transparent 32rem),
+        linear-gradient(145deg, rgba(19, 24, 31, 0.98), rgba(7, 9, 11, 0.98));
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.42);
+}
+
+.app-page.calculators {
+    max-width: 1180px;
 }
 
 .wealth-race-calculator::before {
     content: '';
     position: absolute;
-    inset: -8rem -6rem auto auto;
-    width: 18rem;
-    height: 18rem;
+    inset: -10rem -7rem auto auto;
+    width: 26rem;
+    height: 26rem;
     border-radius: 999px;
-    background: radial-gradient(circle, rgba(247, 147, 26, 0.26), transparent 68%);
+    background: radial-gradient(circle, rgba(247, 147, 26, 0.24), transparent 68%);
     pointer-events: none;
 }
 
-.calculator-kicker {
+.wealth-hero-copy,
+.wealth-dashboard {
     position: relative;
     z-index: 1;
+}
+
+.wealth-hero-copy {
+    max-width: 760px;
+}
+
+.wealth-hero-copy h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(2.2rem, 7vw, 4.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+    text-align: left;
+}
+
+.wealth-hero-copy p {
+    max-width: 720px;
+    color: rgba(231, 223, 210, 0.82);
+    font-size: clamp(1rem, 2vw, 1.18rem);
+}
+
+.calculator-kicker {
     width: fit-content;
-    margin-bottom: 0.65rem;
-    padding: 0.25rem 0.65rem;
-    border: 1px solid rgba(247, 147, 26, 0.35);
+    margin-bottom: 0.85rem;
+    padding: 0.3rem 0.75rem;
+    border: 1px solid rgba(247, 147, 26, 0.42);
     border-radius: 999px;
     color: var(--orange-2);
-    background: rgba(247, 147, 26, 0.10);
+    background: rgba(247, 147, 26, 0.12);
     font-size: 0.72rem;
     font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
 
-.wealth-input-grid {
-    position: relative;
-    z-index: 1;
+.wealth-dashboard {
+    margin-top: 1.5rem;
+}
+
+.wealth-controls {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 0.85rem;
-    margin-top: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 0.9rem;
+    margin: 0;
+}
+
+.control-card {
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.055);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.control-card label {
+    display: block;
+    margin-bottom: 0.55rem;
+    color: rgba(245, 241, 232, 0.92);
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.money-input-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--orange-2);
+    font-size: 1.4rem;
+    font-weight: 900;
+}
+
+.money-input-wrap input,
+.wealth-controls input[type="text"] {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 900;
+    outline: none;
+}
+
+.wealth-controls input[type="range"] {
+    width: 100%;
+    accent-color: var(--orange);
 }
 
 .range-readout {
     display: inline-flex;
-    margin-top: 0.35rem;
+    margin-top: 0.45rem;
     color: var(--orange-2);
-    font-weight: 800;
+    font-weight: 900;
 }
 
 .wealth-summary {
-    position: relative;
-    z-index: 1;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
-    gap: 0.7rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.85rem;
     margin: 1rem 0;
 }
 
 .wealth-summary div {
-    padding: 0.85rem;
+    padding: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.10);
-    border-radius: 12px;
-    background: rgba(5, 7, 10, 0.48);
+    border-radius: 18px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.035));
 }
 
 .wealth-summary strong,
@@ -3015,58 +3092,94 @@ body:has(.app-page) {
 
 .wealth-summary strong {
     color: #ffffff;
-    font-size: clamp(1.15rem, 4vw, 1.55rem);
-    line-height: 1.1;
+    font-size: clamp(1.2rem, 4vw, 1.75rem);
+    line-height: 1.08;
 }
 
 .wealth-summary span {
-    margin-top: 0.35rem;
-    color: rgba(231, 223, 210, 0.78);
-    font-size: 0.78rem;
+    margin-top: 0.4rem;
+    color: rgba(231, 223, 210, 0.76);
+    font-size: 0.8rem;
     line-height: 1.35;
 }
 
+.chart-shell {
+    margin-top: 1rem;
+    padding: clamp(1rem, 2.5vw, 1.35rem);
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    border-radius: 24px;
+    background: rgba(5, 7, 10, 0.58);
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: start;
+    margin-bottom: 1rem;
+}
+
+.chart-eyebrow,
+#wealth-chart-note {
+    margin: 0;
+    color: rgba(231, 223, 210, 0.68);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.chart-header h3 {
+    margin: 0.1rem 0 0;
+    color: #ffffff;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+}
+
 #wealth-race-chart {
-    position: relative;
-    z-index: 1;
-    min-height: 260px;
-    margin-top: 0.75rem;
+    display: block;
+    width: 100%;
+    height: clamp(360px, 52vw, 560px) !important;
 }
 
 .wealth-table-wrap {
-    position: relative;
-    z-index: 1;
     margin-top: 1rem;
     overflow-x: auto;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.045);
 }
 
 .wealth-table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 620px;
+    min-width: 760px;
     color: var(--text);
-    font-size: 0.9rem;
+    font-size: 0.92rem;
 }
 
 .wealth-table th,
 .wealth-table td {
-    padding: 0.7rem 0.65rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    padding: 0.85rem 0.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
     text-align: left;
 }
 
+.wealth-table tr:last-child td {
+    border-bottom: 0;
+}
+
 .wealth-table th {
-    color: rgba(231, 223, 210, 0.72);
-    font-size: 0.75rem;
-    letter-spacing: 0.05em;
+    color: rgba(231, 223, 210, 0.68);
+    font-size: 0.73rem;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
 }
 
 .wealth-dot {
     display: inline-block;
-    width: 0.65rem;
-    height: 0.65rem;
-    margin-right: 0.45rem;
+    width: 0.7rem;
+    height: 0.7rem;
+    margin-right: 0.5rem;
     border-radius: 999px;
     background: var(--dot-color);
     box-shadow: 0 0 16px var(--dot-color);
@@ -3074,30 +3187,44 @@ body:has(.app-page) {
 
 .wealth-table .positive {
     color: var(--green);
-    font-weight: 800;
+    font-weight: 900;
 }
 
 .wealth-table .negative {
     color: var(--danger);
-    font-weight: 800;
+    font-weight: 900;
+}
+
+.wealth-insight {
+    margin-top: 1rem;
+    padding: 1rem 1.1rem;
+    border: 1px solid rgba(247, 147, 26, 0.24);
+    border-radius: 18px;
+    background: rgba(247, 147, 26, 0.08);
+}
+
+.wealth-insight h3 {
+    margin: 0 0 0.35rem;
+    color: #ffffff;
+}
+
+.wealth-insight p {
+    margin: 0;
+    color: rgba(231, 223, 210, 0.82);
 }
 
 .calculator-note {
-    margin: 0.85rem 0 0;
-    color: rgba(231, 223, 210, 0.72);
+    margin: 0.9rem 0 0;
+    color: rgba(231, 223, 210, 0.68);
     font-size: 0.82rem;
 }
 
-.app-page .wealth-race-calculator h2 {
-    text-align: left;
-}
+@media (max-width: 720px) {
+    .chart-header {
+        display: block;
+    }
 
-.app-page .wealth-race-calculator input[type="range"] {
-    accent-color: var(--orange);
-}
-
-@media (min-width: 768px) {
-    .app-page .wealth-race-calculator {
-        padding: 1.25rem;
+    #wealth-chart-note {
+        margin-top: 0.4rem;
     }
 }

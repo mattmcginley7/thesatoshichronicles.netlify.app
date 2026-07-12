@@ -68,93 +68,57 @@
     </nav>
     <main id="main-content" class="container app-page calculators">
         <header class="page-hero">
-            <p class="eyebrow">Interactive Tools</p>
-            <h1>Bitcoin What-If Calculators</h1>
-            <p class="lead">Model purchase dates, million-dollar scenarios, and long-term growth paths.</p>
+            <p class="eyebrow">Interactive Tool</p>
+            <h1>The $10,000 Wealth Race Calculator</h1>
+            <p class="lead">See how savings, bonds, stocks, and Bitcoin compete against inflation over time.</p>
         </header>
 
-        <div class="calculator-grid">
-            <div class="calculator-card roi-calculator">
-                <h2>If I had bought Bitcoin...</h2>
-                <p><small>This calculator works for purchase dates within the last 365 days.</small></p>
-                <div>
-                    <label for="investment">Amount in USD:</label>
-                    <input type="text" id="investment" placeholder="e.g. 10,000">
-                </div>
-                <div>
-                    <label for="purchase-date">Purchase date:</label>
-                    <input type="date" id="purchase-date">
-                </div>
-                <button id="calc-btn">Calculate</button>
-                <p id="result"></p>
-            </div>
-
-            <div class="calculator-card conviction-simulator">
-                <h2>Bitcoin Conviction Simulator</h2>
-                <p><small>Experience the emotional volatility of a cycle without risking real money.</small></p>
-                <div>
-                    <label for="conviction-amount">Starting amount (USD):</label>
-                    <input type="text" id="conviction-amount" placeholder="e.g. 1,000">
-                </div>
-                <div>
-                    <label for="conviction-year">Pick a buy date:</label>
-                    <select id="conviction-year">
-                        <option value="2017">January 2017</option>
-                        <option value="2021">January 2021</option>
-                        <option value="2024">January 2024</option>
-                    </select>
-                </div>
-                <button id="conviction-start">Start the simulation</button>
-                <div class="simulator-panel">
-                    <p id="conviction-status">Choose a buy date and start to see what happens.</p>
-                    <div class="simulator-actions">
-                        <button type="button" id="conviction-sell" disabled>Sell</button>
-                        <button type="button" id="conviction-hold" disabled>Hold</button>
-                        <button type="button" id="conviction-buy" disabled>Buy more</button>
-                    </div>
-                    <div class="simulator-log" id="conviction-log"></div>
-                </div>
-            </div>
-
-            <div class="calculator-card million-calculator">
-                <h2>What if Bitcoin hits $1,000,000?</h2>
-                <p><small>Enter how much Bitcoin you have in dollars today at the current price to see what it will be worth when it hits $1,000,000.</small></p>
-                <div>
-                    <label for="invest-million">Amount in USD:</label>
-                    <input type="text" id="invest-million" placeholder="e.g. 1,000">
-                </div>
-                <button id="calc-million-btn">Calculate</button>
-                <p id="result-million"></p>
-            </div>
-
-
-            <div class="calculator-card wealth-race-calculator">
+        <section class="wealth-race-calculator" aria-labelledby="wealth-race-title">
+            <div class="wealth-hero-copy">
                 <div class="calculator-kicker">Inflation-adjusted comparison</div>
-                <h2>The $10,000 Wealth Race</h2>
-                <p><small>Compare a bank savings account, Treasury bonds, the S&amp;P 500, and Bitcoin against a default 7% inflation hurdle.</small></p>
-                <div class="wealth-input-grid">
-                    <div>
-                        <label for="wealth-amount">Starting amount (USD):</label>
-                        <input type="text" id="wealth-amount" value="10,000" placeholder="e.g. 10,000">
+                <h2 id="wealth-race-title">The $10,000 Wealth Race</h2>
+                <p>Compare how the same starting dollars can behave in cash, bonds, stocks, and Bitcoin after inflation. Adjust the assumptions, then watch nominal value, real purchasing power, and the inflation hurdle update instantly.</p>
+            </div>
+
+            <div class="wealth-dashboard">
+                <form class="wealth-controls" aria-label="Wealth race assumptions">
+                    <div class="control-card featured-control">
+                        <label for="wealth-amount">Starting amount</label>
+                        <div class="money-input-wrap">
+                            <span>$</span>
+                            <input type="text" id="wealth-amount" value="10,000" inputmode="decimal" placeholder="10,000">
+                        </div>
                     </div>
-                    <div>
-                        <label for="wealth-years">Years invested:</label>
+                    <div class="control-card">
+                        <label for="wealth-years">Time horizon</label>
                         <input type="range" id="wealth-years" min="1" max="40" value="10">
                         <span class="range-readout" id="wealth-years-display">10 years</span>
                     </div>
-                    <div>
-                        <label for="inflation-rate">Inflation rate:</label>
+                    <div class="control-card">
+                        <label for="inflation-rate">Inflation rate</label>
                         <input type="range" id="inflation-rate" min="0" max="15" step="0.5" value="7">
                         <span class="range-readout" id="inflation-rate-display">7%</span>
                     </div>
-                    <div>
-                        <label for="bitcoin-rate">Bitcoin annual return:</label>
+                    <div class="control-card">
+                        <label for="bitcoin-rate">Bitcoin annual return</label>
                         <input type="range" id="bitcoin-rate" min="0" max="60" step="1" value="24">
                         <span class="range-readout" id="bitcoin-rate-display">24%</span>
                     </div>
-                </div>
+                </form>
+
                 <div class="wealth-summary" id="wealth-summary" aria-live="polite"></div>
-                <canvas id="wealth-race-chart" aria-label="Investment comparison chart"></canvas>
+
+                <div class="chart-shell">
+                    <div class="chart-header">
+                        <div>
+                            <p class="chart-eyebrow">Nominal growth path</p>
+                            <h3>Portfolio value over time</h3>
+                        </div>
+                        <p id="wealth-chart-note">Hover the chart to inspect each year.</p>
+                    </div>
+                    <canvas id="wealth-race-chart" aria-label="Investment comparison chart"></canvas>
+                </div>
+
                 <div class="wealth-table-wrap">
                     <table class="wealth-table">
                         <thead>
@@ -162,35 +126,18 @@
                                 <th>Option</th>
                                 <th>Annual return</th>
                                 <th>Nominal value</th>
-                                <th>Inflation-adjusted</th>
+                                <th>Real value</th>
+                                <th>Real gain/loss</th>
                             </tr>
                         </thead>
                         <tbody id="wealth-table-body"></tbody>
                     </table>
                 </div>
-                <p class="calculator-note">This educational model uses fixed annualized assumptions, not guaranteed future returns.</p>
+
+                <div class="wealth-insight" id="wealth-insight"></div>
+                <p class="calculator-note">This educational model uses fixed annualized assumptions, not guaranteed future returns. Bitcoin is volatile and can lose value over any time period.</p>
             </div>
-            <div class="calculator-card growth-calculator">
-                <h2>Compounded annual growth projection</h2>
-                <div>
-                    <label for="cagr-amount">Amount in USD you have today:</label>
-                    <input type="text" id="cagr-amount" placeholder="e.g. 5,000">
-                </div>
-                <div>
-                    <label for="cagr-rate">Projected annual growth rate:</label>
-                    <input type="range" id="cagr-rate" min="0" max="100" value="10">
-                    <span id="cagr-rate-display">10%</span>
-                </div>
-                <div>
-                    <button type="button" id="growth-bear">Bear Case (16%)</button>
-                    <button type="button" id="growth-base">Base Case (24%)</button>
-                    <button type="button" id="growth-bull">Bull Case (30%)</button>
-                </div>
-                <button id="cagr-calc-btn">Show Projection</button>
-                <p id="cagr-result"></p>
-                <canvas id="cagr-chart"></canvas>
-            </div>
-        </div>
+        </section>
     </main>
     <script src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
