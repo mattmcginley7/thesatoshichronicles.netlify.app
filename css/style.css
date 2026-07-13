@@ -1856,38 +1856,60 @@ footer {
 }
 
 .homepage .hero {
+    min-height: 410px;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0.8rem;
     align-items: end;
     position: relative;
     overflow: hidden;
+    isolation: isolate;
+    padding: 1.25rem;
+    background:
+        linear-gradient(90deg, rgba(7, 9, 11, 0.94) 0%, rgba(7, 9, 11, 0.78) 42%, rgba(7, 9, 11, 0.24) 100%),
+        linear-gradient(180deg, rgba(7, 9, 11, 0.08) 0%, rgba(7, 9, 11, 0.42) 56%, rgba(7, 9, 11, 0.92) 100%),
+        url("../8E9D877D-AC95-4140-8D0C-0CB91E423ABA.png") center / cover no-repeat;
+}
+
+.homepage .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(circle at 80% 42%, rgba(247, 147, 26, 0.26), transparent 28%);
+}
+
+.homepage .hero-text {
+    max-width: 18.5rem;
+}
+
+.homepage .hero .eyebrow {
+    margin: 0 0 0.55rem;
+    color: var(--orange-2);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.11em;
+    line-height: 1.2;
+    text-transform: uppercase;
 }
 
 .homepage .hero h1 {
     margin: 0;
+    color: #fff7ef;
     font-family: "Georgia", "Times New Roman", serif;
-    font-size: clamp(2.25rem, 9.8vw, 3rem);
-    line-height: 1.02;
-    letter-spacing: -0.02em;
+    font-size: clamp(2.65rem, 12.4vw, 3.9rem);
+    line-height: 0.96;
+    letter-spacing: -0.045em;
     text-align: left;
-}
-
-.homepage .hero-title-main {
-    color: #f7ede1;
-    display: block;
-}
-
-.homepage .hero-title-accent {
-    color: var(--orange-2);
-    display: block;
+    text-wrap: balance;
+    text-shadow: 0 3px 18px rgba(0, 0, 0, 0.72);
 }
 
 .homepage .lead {
-    font-size: 0.98rem;
-    line-height: 1.45;
-    margin: 0.5rem 0 0;
-    color: #d7dde3;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0.7rem 0 0;
+    color: #e8edf2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.78);
 }
 
 .homepage .hero-actions {
