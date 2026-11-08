@@ -9,8 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/editorial.css">
 </head>
-<body>
+<body class="editorial">
     <a class="skip-link" href="#main-content">Skip to content</a>
     <nav>
         <div class="nav-brand">
@@ -67,11 +68,13 @@
         </ul>
     </nav>
     <main id="main-content" class="container homepage">
+        <div class="home-opening">
         <section class="hero home-card">
             <div class="hero-text">
                 <p class="eyebrow">Bitcoin, explained simply</p>
-                <h1>The Satoshi Chronicles</h1>
+                <h1>The Satoshi<br><em>Chronicles.</em></h1>
                 <p class="lead">A beginner-friendly guide to understand Bitcoin, why it matters, and how to own it safely.</p>
+                <p class="hero-byline">An independent guide to the future of money.</p>
                 <div class="hero-actions">
                     <a class="button primary" href="#quick-takeaways">Start with the basics <span aria-hidden="true">→</span></a>
                     <a class="button ghost" href="howtobuy.html">Read the buying guide <span aria-hidden="true">→</span></a>
@@ -79,28 +82,19 @@
             </div>
         </section>
 
-        <section class="home-dashboard" aria-label="Bitcoin quick stats and shortcuts">
-            <article id="currentBTCPrice" class="mini-card price-dashboard-card">
-                <p class="dashboard-label">Current Bitcoin Price <span class="live-dot">Live</span></p>
-                <div class="price-row">
-                    <span class="price-badge" aria-hidden="true">₿</span>
-                    <div>
-                        <h2><span id="bitcoin-price"></span></h2>
-                        <p class="price-change">+1.38% (24h) ▲</p>
-                    </div>
-                    <span class="sparkline" aria-hidden="true"><svg viewBox="0 0 140 48"><path d="M3 37 C18 33 20 27 32 29 S48 13 60 20 74 38 86 27 96 11 108 15 116 29 137 8"/></svg></span>
-                </div>
-                <p class="dashboard-footnote">Updated <span id="price-updated">--</span> · Price from CoinGecko</p>
+        <section class="home-dashboard" aria-label="Bitcoin market snapshot">
+            <article id="currentBTCPrice" class="market-card">
+                <div class="market-heading"><p class="dashboard-label"><span class="market-coin" aria-hidden="true">₿</span> Bitcoin <span class="market-pair">BTC / USD</span></p><span id="market-status" class="market-status">Connecting</span></div>
+                <div class="market-summary"><h2 id="bitcoin-price">—</h2><p id="price-change" class="price-change">Loading market data</p></div>
+                <div class="chart-toolbar"><span id="chart-caption">Price history · USD</span><div class="chart-ranges" role="group" aria-label="Price history period"><button type="button" data-days="1" aria-pressed="true">24H</button><button type="button" data-days="7" aria-pressed="false">7D</button><button type="button" data-days="30" aria-pressed="false">30D</button></div></div>
+                <div class="market-plot"><svg id="price-chart" viewBox="0 0 600 180" role="img" aria-label="Bitcoin price history is loading" preserveAspectRatio="none"><defs><linearGradient id="price-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="currentColor" stop-opacity=".20"/><stop offset="100%" stop-color="currentColor" stop-opacity="0"/></linearGradient></defs><path class="chart-grid" d="M0 30H600 M0 90H600 M0 150H600"/><path id="price-area" fill="url(#price-fill)"/><path id="price-line" fill="none" stroke="currentColor" stroke-width="2.5" vector-effect="non-scaling-stroke"/></svg><p id="chart-message" role="status">Loading price history…</p></div>
+                <div class="chart-axis"><span id="chart-start">—</span><span id="chart-end">—</span></div>
+                <p id="market-footnote" class="dashboard-footnote">Coinbase Exchange · Updates every 5 minutes</p>
             </article>
-            <article class="mini-card mini-stat-card">
-                <span class="mini-icon" aria-hidden="true">◎</span>
-                <div><h3>21M</h3><p>Hard capped supply</p></div>
-            </article>
-            <article class="mini-card mini-stat-card">
-                <span class="mini-icon" aria-hidden="true">▱</span>
-                <div><h3>100M</h3><p>Satoshis in 1 Bitcoin</p></div>
-            </article>
+            <div class="market-principles"><article><span>01 / FINITE BY DESIGN</span><h3>21 million.</h3><p>Hard capped supply</p></article><article><span>02 / START SMALL</span><h3>100 million.</h3><p>Satoshis in 1 Bitcoin</p></article></div>
         </section>
+
+        </div>
 
         <section class="start-here-panel" aria-labelledby="start-here-heading">
             <p class="section-kicker" id="start-here-heading">Start here</p>
@@ -114,7 +108,7 @@
             </div>
         </section>
 
-        <section class="why-bitcoin" aria-labelledby="why-bitcoin-heading">
+        <section class="why-bitcoin" aria-label="A calmer way to learn Bitcoin">
             <p class="section-kicker">A calmer way to learn Bitcoin</p>
             <div class="why-grid">
                 <article class="mini-card"><span class="mini-icon" aria-hidden="true">♙</span><h3>Beginner focused</h3><p>Clear explanations, no jargon, no hype. Just Bitcoin.</p></article>
@@ -157,7 +151,7 @@
             </ul>
         </section>
 
-        <section class="home-longform home-card" aria-labelledby="whatIsBitcoin">
+        <div class="reading-layout"><aside class="reading-nav"><span class="section-kicker">In this guide</span><a href="#whatIsBitcoin">Why Bitcoin matters</a><a href="#what-is-money">What is money?</a><a href="#h2Bitcoin">The traits of good money</a><a href="#bitcoin-price-outlook">The price perspective</a><a href="#final-thoughts">Final thoughts</a><a href="#main-content">Back to top ↑</a></aside><section class="home-longform home-card" aria-labelledby="whatIsBitcoin">
         <h2 id="whatIsBitcoin">"Why Should I Care About Bitcoin?"</h2>
 
        
@@ -469,6 +463,7 @@
 
                 </section>
 
+                </div>
                 <section class="cta-banner home-card" aria-labelledby="cta-banner-heading">
                     <div>
                         <p class="eyebrow">Ready for the practical step?</p>
